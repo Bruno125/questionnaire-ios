@@ -13,6 +13,8 @@
 		392000FA1DC0F0880083B942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000F81DC0F0880083B942 /* Main.storyboard */; };
 		392000FC1DC0F0880083B942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392000FB1DC0F0880083B942 /* Assets.xcassets */; };
 		392000FF1DC0F0880083B942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000FD1DC0F0880083B942 /* LaunchScreen.storyboard */; };
+		3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001091DC100FE0083B942 /* QuestionnaireViewController.swift */; };
+		3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		392000FB1DC0F0880083B942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		392000FE1DC0F0880083B942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		392001001DC0F0880083B942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		392001091DC100FE0083B942 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = Questionnaire/QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewModel.swift; path = Questionnaire/QuestionnaireViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 		392001071DC0F8A40083B942 /* Questionnarie */ = {
 			isa = PBXGroup;
 			children = (
+				392001091DC100FE0083B942 /* QuestionnaireViewController.swift */,
+				3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */,
 			);
 			name = Questionnarie;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 			files = (
 				392000F71DC0F0880083B942 /* SecondViewController.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
+				3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */,
 				392000F51DC0F0880083B942 /* FirstViewController.swift in Sources */,
+				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

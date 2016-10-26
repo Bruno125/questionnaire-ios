@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Questionnaire View Controller-->
         <scene sceneID="uCl-zh-Wwo">
             <objects>
-                <viewController id="Xhe-Ye-rqp" sceneMemberID="viewController">
+                <viewController id="Xhe-Ye-rqp" customClass="QuestionnaireViewController" customModule="Questionnaire" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zjo-pI-HtR"/>
                         <viewControllerLayoutGuide type="bottom" id="j4Z-Ma-xV8"/>
@@ -99,7 +99,11 @@
                                         <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem title="Question 1 of 6" id="Rof-B6-L1N">
-                                                <barButtonItem key="leftBarButtonItem" title="X" id="aYE-wb-81Q"/>
+                                                <barButtonItem key="leftBarButtonItem" title="X" id="aYE-wb-81Q">
+                                                    <connections>
+                                                        <action selector="actionClose:" destination="Xhe-Ye-rqp" id="3go-6I-pVc"/>
+                                                    </connections>
+                                                </barButtonItem>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
