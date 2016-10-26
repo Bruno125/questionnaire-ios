@@ -56,6 +56,9 @@
 		392000F11DC0F0880083B942 /* Questionnaire */ = {
 			isa = PBXGroup;
 			children = (
+				392001081DC0F8C40083B942 /* Stadistics */,
+				392001071DC0F8A40083B942 /* Questionnarie */,
+				392001061DC0F89D0083B942 /* Models */,
 				392000F21DC0F0880083B942 /* AppDelegate.swift */,
 				392000F41DC0F0880083B942 /* FirstViewController.swift */,
 				392000F61DC0F0880083B942 /* SecondViewController.swift */,
@@ -65,6 +68,27 @@
 				392001001DC0F0880083B942 /* Info.plist */,
 			);
 			path = Questionnaire;
+			sourceTree = "<group>";
+		};
+		392001061DC0F89D0083B942 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		392001071DC0F8A40083B942 /* Questionnarie */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Questionnarie;
+			sourceTree = "<group>";
+		};
+		392001081DC0F8C40083B942 /* Stadistics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Stadistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
