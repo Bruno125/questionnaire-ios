@@ -15,6 +15,12 @@
 		392000FF1DC0F0880083B942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000FD1DC0F0880083B942 /* LaunchScreen.storyboard */; };
 		3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001091DC100FE0083B942 /* QuestionnaireViewController.swift */; };
 		3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */; };
+		3920010E1DC1042A0083B942 /* QuestionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920010D1DC1042A0083B942 /* QuestionTypes.swift */; };
+		392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001101DC104F30083B942 /* TextTableViewCell.swift */; };
+		392001131DC104F30083B942 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001111DC104F30083B942 /* TextTableViewCell.xib */; };
+		392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001141DC105850083B942 /* NumericTableViewCell.swift */; };
+		392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001151DC105850083B942 /* NumericTableViewCell.xib */; };
+		39F50D241DCD85A6006014C3 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F50D231DCD85A6006014C3 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		392001001DC0F0880083B942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		392001091DC100FE0083B942 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = Questionnaire/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewModel.swift; path = Questionnaire/QuestionnaireViewModel.swift; sourceTree = "<group>"; };
+		3920010D1DC1042A0083B942 /* QuestionTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTypes.swift; path = Questionnaire/QuestionTypes.swift; sourceTree = "<group>"; };
+		392001101DC104F30083B942 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextTableViewCell.swift; path = Questionnaire/Cells/TextTableViewCell.swift; sourceTree = "<group>"; };
+		392001111DC104F30083B942 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextTableViewCell.xib; path = Questionnaire/Cells/TextTableViewCell.xib; sourceTree = "<group>"; };
+		392001141DC105850083B942 /* NumericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericTableViewCell.swift; path = Questionnaire/Cells/NumericTableViewCell.swift; sourceTree = "<group>"; };
+		392001151DC105850083B942 /* NumericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumericTableViewCell.xib; path = Questionnaire/Cells/NumericTableViewCell.xib; sourceTree = "<group>"; };
+		39F50D231DCD85A6006014C3 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Models/Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 		392001061DC0F89D0083B942 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				39F50D231DCD85A6006014C3 /* Question.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -84,8 +97,10 @@
 		392001071DC0F8A40083B942 /* Questionnarie */ = {
 			isa = PBXGroup;
 			children = (
+				3920010F1DC104C40083B942 /* Cells */,
 				392001091DC100FE0083B942 /* QuestionnaireViewController.swift */,
 				3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */,
+				3920010D1DC1042A0083B942 /* QuestionTypes.swift */,
 			);
 			name = Questionnarie;
 			sourceTree = "<group>";
@@ -95,6 +110,17 @@
 			children = (
 			);
 			name = Stadistics;
+			sourceTree = "<group>";
+		};
+		3920010F1DC104C40083B942 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				392001101DC104F30083B942 /* TextTableViewCell.swift */,
+				392001111DC104F30083B942 /* TextTableViewCell.xib */,
+				392001141DC105850083B942 /* NumericTableViewCell.swift */,
+				392001151DC105850083B942 /* NumericTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +184,8 @@
 			files = (
 				392000FF1DC0F0880083B942 /* LaunchScreen.storyboard in Resources */,
 				392000FC1DC0F0880083B942 /* Assets.xcassets in Resources */,
+				392001131DC104F30083B942 /* TextTableViewCell.xib in Resources */,
+				392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */,
 				392000FA1DC0F0880083B942 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,8 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				392000F71DC0F0880083B942 /* SecondViewController.swift in Sources */,
+				392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
+				39F50D241DCD85A6006014C3 /* Question.swift in Sources */,
+				392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */,
 				3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */,
+				3920010E1DC1042A0083B942 /* QuestionTypes.swift in Sources */,
 				392000F51DC0F0880083B942 /* FirstViewController.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
 			);
@@ -335,6 +367,7 @@
 				392001051DC0F0880083B942 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
