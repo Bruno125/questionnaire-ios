@@ -20,6 +20,7 @@
 		392001131DC104F30083B942 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001111DC104F30083B942 /* TextTableViewCell.xib */; };
 		392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001141DC105850083B942 /* NumericTableViewCell.swift */; };
 		392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001151DC105850083B942 /* NumericTableViewCell.xib */; };
+		39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -30,7 +31,11 @@
 		39EE5BAA1DCE34ED00A82D80 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39EE5BAB1DCE34ED00A82D80 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39EE5BAD1DCE34ED00A82D80 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		39F50D241DCD85A6006014C3 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F50D231DCD85A6006014C3 /* Question.swift */; };
+		39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BB41DCE77E400A82D80 /* Question.swift */; };
+		39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BBE1DCE7B5900A82D80 /* Injection.swift */; };
+		39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BC01DCE7C0700A82D80 /* Questionnaire.swift */; };
+		39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BC21DCE7ECF00A82D80 /* QuestionnaireRepo.swift */; };
+		39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,13 +71,18 @@
 		392001111DC104F30083B942 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextTableViewCell.xib; path = Questionnaire/Cells/TextTableViewCell.xib; sourceTree = "<group>"; };
 		392001141DC105850083B942 /* NumericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericTableViewCell.swift; path = Questionnaire/Cells/NumericTableViewCell.swift; sourceTree = "<group>"; };
 		392001151DC105850083B942 /* NumericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumericTableViewCell.xib; path = Questionnaire/Cells/NumericTableViewCell.xib; sourceTree = "<group>"; };
+		39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireRepository.swift; path = Data/Source/QuestionnaireRepository.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		39EE5B9F1DCE34B400A82D80 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		39F50D231DCD85A6006014C3 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Models/Question.swift; sourceTree = "<group>"; };
+		39EE5BB41DCE77E400A82D80 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Data/Models/Question.swift; sourceTree = "<group>"; };
+		39EE5BBE1DCE7B5900A82D80 /* Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Injection.swift; path = Injection/Injection.swift; sourceTree = "<group>"; };
+		39EE5BC01DCE7C0700A82D80 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Questionnaire.swift; path = Data/Models/Questionnaire.swift; sourceTree = "<group>"; };
+		39EE5BC21DCE7ECF00A82D80 /* QuestionnaireRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireRepo.swift; path = Data/Source/QuestionnaireRepo.swift; sourceTree = "<group>"; };
+		39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireService.swift; path = Data/Source/QuestionnaireService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +121,10 @@
 		392000F11DC0F0880083B942 /* Questionnaire */ = {
 			isa = PBXGroup;
 			children = (
+				39EE5BBD1DCE7B4800A82D80 /* Injection */,
+				39EE5BB11DCE77C600A82D80 /* Data */,
 				392001081DC0F8C40083B942 /* Stadistics */,
 				392001071DC0F8A40083B942 /* Questionnarie */,
-				392001061DC0F89D0083B942 /* Models */,
 				392000F21DC0F0880083B942 /* AppDelegate.swift */,
 				392000F41DC0F0880083B942 /* FirstViewController.swift */,
 				392000F61DC0F0880083B942 /* SecondViewController.swift */,
@@ -123,14 +134,6 @@
 				392001001DC0F0880083B942 /* Info.plist */,
 			);
 			path = Questionnaire;
-			sourceTree = "<group>";
-		};
-		392001061DC0F89D0083B942 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				39F50D231DCD85A6006014C3 /* Question.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		392001071DC0F8A40083B942 /* Questionnarie */ = {
@@ -173,6 +176,42 @@
 				39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39EE5BB11DCE77C600A82D80 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				39EE5BB31DCE77D300A82D80 /* Models */,
+				39EE5BB21DCE77CE00A82D80 /* Source */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		39EE5BB21DCE77CE00A82D80 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				39EE5BC21DCE7ECF00A82D80 /* QuestionnaireRepo.swift */,
+				39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */,
+				39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		39EE5BB31DCE77D300A82D80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39EE5BB41DCE77E400A82D80 /* Question.swift */,
+				39EE5BC01DCE7C0700A82D80 /* Questionnaire.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		39EE5BBD1DCE7B4800A82D80 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				39EE5BBE1DCE7B5900A82D80 /* Injection.swift */,
+			);
+			name = Injection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,12 +314,17 @@
 				392000F71DC0F0880083B942 /* SecondViewController.swift in Sources */,
 				392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
-				39F50D241DCD85A6006014C3 /* Question.swift in Sources */,
+				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
+				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
 				392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */,
 				3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */,
 				3920010E1DC1042A0083B942 /* QuestionTypes.swift in Sources */,
 				392000F51DC0F0880083B942 /* FirstViewController.swift in Sources */,
+				39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */,
+				39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */,
+				39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
+				39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

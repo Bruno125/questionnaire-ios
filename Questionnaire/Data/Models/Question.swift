@@ -19,7 +19,7 @@ class Choice{
     }
 }
 
-class Question: NSObject {
+class Question {
     let name: String
     let type: String
     let title: String
