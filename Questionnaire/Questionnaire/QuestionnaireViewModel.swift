@@ -51,7 +51,7 @@ class QuestionnaireViewModel: NSObject {
     
     func sendNextQuestion(){
         //Do nothing if we have no questions or if we are already at the final step
-        if mQuestionnaire == nil || mQuestionnaire!.questions.count >= mCurrentIndex + 1{
+        if mQuestionnaire == nil || mCurrentIndex + 1 >= mQuestionnaire!.questions.count{
             return
         }
         

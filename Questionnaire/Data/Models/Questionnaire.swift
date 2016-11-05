@@ -30,7 +30,7 @@ class Questionnaire {
     static func parse(json: JSON) -> Questionnaire{
         
         let id = json["id"].stringValue
-        let title = json["title"].stringValue
+        let title = json["question"].stringValue
         let description = json["description"].stringValue
         
         let questions = json["questions"].arrayValue.map({
