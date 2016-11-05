@@ -11,6 +11,7 @@ import UIKit
 public enum QuestionTypes : Int{
     case text
     case numeric
-    case single
-    case multiple
+    case singleOption
+    case multipleOption
+    case none
 }

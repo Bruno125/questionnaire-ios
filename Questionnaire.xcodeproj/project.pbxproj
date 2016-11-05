@@ -15,12 +15,12 @@
 		392000FF1DC0F0880083B942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000FD1DC0F0880083B942 /* LaunchScreen.storyboard */; };
 		3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001091DC100FE0083B942 /* QuestionnaireViewController.swift */; };
 		3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */; };
-		3920010E1DC1042A0083B942 /* QuestionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920010D1DC1042A0083B942 /* QuestionTypes.swift */; };
 		392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001101DC104F30083B942 /* TextTableViewCell.swift */; };
 		392001131DC104F30083B942 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001111DC104F30083B942 /* TextTableViewCell.xib */; };
 		392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001141DC105850083B942 /* NumericTableViewCell.swift */; };
 		392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001151DC105850083B942 /* NumericTableViewCell.xib */; };
 		39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */; };
+		39405FEC1DCE8F020049A96D /* QuestionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FEB1DCE8F020049A96D /* QuestionTypes.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -66,12 +66,12 @@
 		392001001DC0F0880083B942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		392001091DC100FE0083B942 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = Questionnaire/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewModel.swift; path = Questionnaire/QuestionnaireViewModel.swift; sourceTree = "<group>"; };
-		3920010D1DC1042A0083B942 /* QuestionTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTypes.swift; path = Questionnaire/QuestionTypes.swift; sourceTree = "<group>"; };
 		392001101DC104F30083B942 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextTableViewCell.swift; path = Questionnaire/Cells/TextTableViewCell.swift; sourceTree = "<group>"; };
 		392001111DC104F30083B942 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextTableViewCell.xib; path = Questionnaire/Cells/TextTableViewCell.xib; sourceTree = "<group>"; };
 		392001141DC105850083B942 /* NumericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericTableViewCell.swift; path = Questionnaire/Cells/NumericTableViewCell.swift; sourceTree = "<group>"; };
 		392001151DC105850083B942 /* NumericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumericTableViewCell.xib; path = Questionnaire/Cells/NumericTableViewCell.xib; sourceTree = "<group>"; };
 		39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireRepository.swift; path = Data/Source/QuestionnaireRepository.swift; sourceTree = "<group>"; };
+		39405FEB1DCE8F020049A96D /* QuestionTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTypes.swift; path = Data/Models/QuestionTypes.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 				3920010F1DC104C40083B942 /* Cells */,
 				392001091DC100FE0083B942 /* QuestionnaireViewController.swift */,
 				3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */,
-				3920010D1DC1042A0083B942 /* QuestionTypes.swift */,
 			);
 			name = Questionnarie;
 			sourceTree = "<group>";
@@ -202,6 +201,7 @@
 			children = (
 				39EE5BB41DCE77E400A82D80 /* Question.swift */,
 				39EE5BC01DCE7C0700A82D80 /* Questionnaire.swift */,
+				39405FEB1DCE8F020049A96D /* QuestionTypes.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -312,13 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				392000F71DC0F0880083B942 /* SecondViewController.swift in Sources */,
+				39405FEC1DCE8F020049A96D /* QuestionTypes.swift in Sources */,
 				392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
 				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
 				392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */,
 				3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */,
-				3920010E1DC1042A0083B942 /* QuestionTypes.swift in Sources */,
 				392000F51DC0F0880083B942 /* FirstViewController.swift in Sources */,
 				39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */,
 				39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */,

@@ -45,4 +45,21 @@ class Question {
         return Question(name: name, type: type, title: title, choices: choices)
     }
     
+    
+    func getType() -> QuestionTypes{
+        switch type {
+        case "text":
+            return .text
+        case "numeric":
+            return .numeric
+        case "single-option":
+            return .singleOption
+        case "multi-option":
+            return .multipleOption
+        default:
+            return .none
+        }
+    }
+    
+    
 }

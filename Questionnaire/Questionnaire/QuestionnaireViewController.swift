@@ -7,18 +7,42 @@
 //
 
 import UIKit
+import RxSwift
 
 class QuestionnaireViewController: UIViewController {
 
+    let mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo())
+    let mDisposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bind()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func bind(){
+        
+        mViewModel.getTextQuestionStream()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { q in print(q)})
+            .addDisposableTo(mDisposeBag)
+        
+        mViewModel.getNumberQuestionStream()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { q in print(q)})
+            .addDisposableTo(mDisposeBag)
+        
+        mViewModel.getSingleOptionQuestionStream()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { q in print(q)})
+            .addDisposableTo(mDisposeBag)
+        
+        mViewModel.getMultipleOptionQuestionStream()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { q in print(q)})
+            .addDisposableTo(mDisposeBag)
+        
+        mViewModel.startQuestionnaire()
+        
     }
     
     /// Called when user wants to exit. We will ask
