@@ -20,8 +20,35 @@
 		392001131DC104F30083B942 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001111DC104F30083B942 /* TextTableViewCell.xib */; };
 		392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001141DC105850083B942 /* NumericTableViewCell.swift */; };
 		392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001151DC105850083B942 /* NumericTableViewCell.xib */; };
+		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
+		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
+		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
+		39EE5BA41DCE34B400A82D80 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */; };
+		39EE5BA61DCE34B400A82D80 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */; };
+		39EE5BA81DCE34ED00A82D80 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39EE5BA91DCE34ED00A82D80 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39EE5BAA1DCE34ED00A82D80 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39EE5BAB1DCE34ED00A82D80 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39EE5BAD1DCE34ED00A82D80 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39F50D241DCD85A6006014C3 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F50D231DCD85A6006014C3 /* Question.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		39EE5BA71DCE34DE00A82D80 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				39EE5BA81DCE34ED00A82D80 /* Alamofire.framework in CopyFiles */,
+				39EE5BA91DCE34ED00A82D80 /* RxBlocking.framework in CopyFiles */,
+				39EE5BAA1DCE34ED00A82D80 /* RxCocoa.framework in CopyFiles */,
+				39EE5BAB1DCE34ED00A82D80 /* RxSwift.framework in CopyFiles */,
+				39EE5BAD1DCE34ED00A82D80 /* SwiftyJSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		392000EF1DC0F0880083B942 /* Questionnaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questionnaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +66,12 @@
 		392001111DC104F30083B942 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextTableViewCell.xib; path = Questionnaire/Cells/TextTableViewCell.xib; sourceTree = "<group>"; };
 		392001141DC105850083B942 /* NumericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericTableViewCell.swift; path = Questionnaire/Cells/NumericTableViewCell.swift; sourceTree = "<group>"; };
 		392001151DC105850083B942 /* NumericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumericTableViewCell.xib; path = Questionnaire/Cells/NumericTableViewCell.xib; sourceTree = "<group>"; };
+		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		39EE5B9F1DCE34B400A82D80 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		39F50D231DCD85A6006014C3 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Models/Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +80,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */,
+				39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */,
+				39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */,
+				39EE5BA41DCE34B400A82D80 /* RxSwift.framework in Frameworks */,
+				39EE5BA61DCE34B400A82D80 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +96,7 @@
 			children = (
 				392000F11DC0F0880083B942 /* Questionnaire */,
 				392000F01DC0F0880083B942 /* Products */,
+				39EE5B9A1DCE34B200A82D80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +162,19 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		39EE5B9A1DCE34B200A82D80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */,
+				39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */,
+				39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */,
+				39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */,
+				39EE5B9F1DCE34B400A82D80 /* RxTest.framework */,
+				39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,6 +185,8 @@
 				392000EB1DC0F0880083B942 /* Sources */,
 				392000EC1DC0F0880083B942 /* Frameworks */,
 				392000ED1DC0F0880083B942 /* Resources */,
+				39EE5BA71DCE34DE00A82D80 /* CopyFiles */,
+				39EE5BAF1DCE357400A82D80 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -191,6 +245,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39EE5BAF1DCE357400A82D80 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		392000EB1DC0F0880083B942 /* Sources */ = {
@@ -328,6 +403,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Questionnaire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brunoaybar.Questionnaire;
@@ -340,6 +419,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Questionnaire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brunoaybar.Questionnaire;
