@@ -26,6 +26,8 @@
 		39405FF01DCEAB1C0049A96D /* NVActivityIndicatorView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF21DCEAEA90049A96D /* HexaColor.swift */; };
 		39405FF51DCEAEF30049A96D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF41DCEAEF30049A96D /* Utils.swift */; };
+		39405FF81DCF1FF70049A96D /* questionnaire.json in Resources */ = {isa = PBXBuildFile; fileRef = 39405FF71DCF1FF70049A96D /* questionnaire.json */; };
+		39405FFA1DCF202B0049A96D /* QuestionnaireFileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF91DCF202B0049A96D /* QuestionnaireFileSource.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -81,6 +83,8 @@
 		39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		39405FF21DCEAEA90049A96D /* HexaColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HexaColor.swift; path = Utils/HexaColor.swift; sourceTree = "<group>"; };
 		39405FF41DCEAEF30049A96D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
+		39405FF71DCF1FF70049A96D /* questionnaire.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questionnaire.json; path = Data/Files/questionnaire.json; sourceTree = "<group>"; };
+		39405FF91DCF202B0049A96D /* QuestionnaireFileSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireFileSource.swift; path = Data/Source/QuestionnaireFileSource.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -185,6 +189,14 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		39405FF61DCF1FB60049A96D /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				39405FF71DCF1FF70049A96D /* questionnaire.json */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		39EE5B9A1DCE34B200A82D80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +214,7 @@
 		39EE5BB11DCE77C600A82D80 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				39405FF61DCF1FB60049A96D /* Files */,
 				39EE5BB31DCE77D300A82D80 /* Models */,
 				39EE5BB21DCE77CE00A82D80 /* Source */,
 			);
@@ -214,6 +227,7 @@
 				39EE5BC21DCE7ECF00A82D80 /* QuestionnaireRepo.swift */,
 				39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */,
 				39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */,
+				39405FF91DCF202B0049A96D /* QuestionnaireFileSource.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -302,6 +316,7 @@
 				392001131DC104F30083B942 /* TextTableViewCell.xib in Resources */,
 				392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */,
 				392000FA1DC0F0880083B942 /* Main.storyboard in Resources */,
+				39405FF81DCF1FF70049A96D /* questionnaire.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +364,7 @@
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
 				39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */,
 				39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */,
+				39405FFA1DCF202B0049A96D /* QuestionnaireFileSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

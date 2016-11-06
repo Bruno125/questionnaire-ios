@@ -16,11 +16,31 @@ class QuestionnaireRepository: QuestionnaireRepo {
     static let sharedInstance = QuestionnaireRepository()
     
     let serviceSource = QuestionnaireService.sharedInstance
+    let fileSource = QuestionnaireFileSource.sharedInstance
+    let mDisposableBag = DisposeBag()
     
     ///Will try to get the questionnaire from the repo, but if that fails,
     ///will get the questionnaire info from an static inner json file
     func getQuestionnaire() -> Observable<Questionnaire> {
-        return serviceSource.getQuestionnaire()
+        return Observable.create{ (observer) -> Disposable in
+            //Try to get questionnaire from service
+            self.serviceSource.getQuestionnaire().subscribe(onNext: { questionnaire in
+                observer.onNext(questionnaire)
+            }, onError: { error in
+                //We couldn't get the info from the remote service, so
+                //we'll try to get it from a local json file
+                self.fileSource.getQuestionnaire().subscribe(onNext: { questionnaire in
+                    observer.onNext(questionnaire)
+                },onError: { error in
+                    observer.onError(error)
+                }).addDisposableTo(self.mDisposableBag)
+            }).addDisposableTo(self.mDisposableBag)
+            
+            return Disposables.create()
+        }
+        
+        
+        
     }
     
 }

@@ -1,0 +1,83 @@
+{
+    "id": "1",
+    "title": "Questionnaire",
+    "description": "This is a sample questionnaire",
+    "questions": [
+                  {
+                  "name": "question-1",
+                  "type": "single-option",
+                  "title": "Q 1",
+                  "question": "Which NBA team do you follow?",
+                  "choices": [
+                              {
+                              "label": "not at all",
+                              "value": 1
+                              },
+                              {
+                              "label": "a little",
+                              "value": 2
+                              },
+                              {
+                              "label": "somewhat",
+                              "value": 3
+                              },
+                              {
+                              "label": "quite a lot",
+                              "value": 4
+                              },
+                              {
+                              "label": "Very much",
+                              "value": 5
+                              }
+                              ]
+                  },
+                  {
+                  "name": "question-2",
+                  "type": "multi-option",
+                  "title": "Q 2",
+                  "question": "For how many years have you followed them?",
+                  "choices": [
+                              {
+                              "label": "Introduction to COMP327",
+                              "value": 1
+                              },
+                              {
+                              "label": "Introduction to Core Data",
+                              "value": 2
+                              },
+                              {
+                              "label": "Swift Intro",
+                              "value": 3
+                              },
+                              {
+                              "label": "The Internet of Things",
+                              "value": 4
+                              }
+                              ]
+                  },
+                  {
+                  "name": "question-3",
+                  "type": "numeric",
+                  "title": "Q 3",
+                  "question": "How many mobile devices do you own?",
+                  "choices": [
+                              {
+                              "label": "Quantity",
+                              "value": 1
+                              }
+                              ]
+                  },
+                  {
+                  "name": "question-4",
+                  "type": "text",
+                  "title": "Question 4",
+                  "question": "Do you have any comments?",
+                  "choices": [
+                              {
+                              "label": "comment",
+                              "value": 1
+                              }
+                              ]
+                  }
+                  ]
+}
