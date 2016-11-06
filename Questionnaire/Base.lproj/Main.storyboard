@@ -53,7 +53,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Xhe-Ye-rqp" kind="presentation" id="5vH-qp-1n6"/>
+                                            <segue destination="Xhe-Ye-rqp" kind="presentation" identifier="QuestionnaireSegue" id="5vH-qp-1n6"/>
                                         </connections>
                                     </button>
                                 </subviews>

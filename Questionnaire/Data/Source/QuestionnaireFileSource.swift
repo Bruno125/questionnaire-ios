@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import SwiftyJSON
 
+///Questionnaire provider that obtains the data from a local json file
 class QuestionnaireFileSource: QuestionnaireRepo {
 
     static let sharedInstance = QuestionnaireFileSource()

@@ -11,37 +11,51 @@ import RxSwift
 
 class QuestionnaireViewController: UIViewController {
 
-    let mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo())
+    var mQuestionnaire : Questionnaire?
+    var mViewModel : QuestionnaireViewModel?
     let mDisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
+        
+        if mQuestionnaire == nil{
+            //Init viewModel
+            mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo())
+            //Start listening from streams
+            bind()
+            //Get questionnaire info
+            mViewModel?.startQuestionnaire()
+        }else{
+            //Init viewModel with a questionnaire
+            mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo(), questionnaire: mQuestionnaire!)
+            //Start listening from streams
+            bind()
+            //We already have a questionnaire, so we request the first question
+            mViewModel?.sendNextQuestion()
+        }
     }
-
+    
     func bind(){
         
-        mViewModel.getTextQuestionStream()
+        mViewModel?.getTextQuestionStream()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { q in print(q)})
             .addDisposableTo(mDisposeBag)
         
-        mViewModel.getNumberQuestionStream()
+        mViewModel?.getNumberQuestionStream()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { q in print(q)})
             .addDisposableTo(mDisposeBag)
         
-        mViewModel.getSingleOptionQuestionStream()
+        mViewModel?.getSingleOptionQuestionStream()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { q in print(q)})
             .addDisposableTo(mDisposeBag)
         
-        mViewModel.getMultipleOptionQuestionStream()
+        mViewModel?.getMultipleOptionQuestionStream()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { q in print(q)})
             .addDisposableTo(mDisposeBag)
-        
-        mViewModel.startQuestionnaire()
         
     }
     

@@ -20,6 +20,12 @@ class QuestionnaireViewModel: NSObject {
         mSource = source
     }
     
+    init(source: QuestionnaireRepo, questionnaire: Questionnaire){
+        mSource = source
+        mQuestionnaire = questionnaire
+        mCurrentIndex = -1
+    }
+    
     private let textSubject = PublishSubject<Question>()
     private let numberSubject = PublishSubject<Question>()
     private let singleOptionSubject = PublishSubject<Question>()
