@@ -36,7 +36,7 @@ class Question {
     static func parse(json : JSON) -> Question{
         let name = json["name"].stringValue
         let type = json["type"].stringValue
-        let title = json["title"].stringValue
+        let title = json["question"].stringValue
         
         let choices = json["choices"].arrayValue.map({
             Choice(label: $0["label"].stringValue, value: $0["label"].intValue)

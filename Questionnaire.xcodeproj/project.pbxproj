@@ -21,6 +21,11 @@
 		392001171DC105850083B942 /* NumericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392001151DC105850083B942 /* NumericTableViewCell.xib */; };
 		39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */; };
 		39405FEC1DCE8F020049A96D /* QuestionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FEB1DCE8F020049A96D /* QuestionTypes.swift */; };
+		39405FEE1DCEAB110049A96D /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; };
+		39405FEF1DCEAB1C0049A96D /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; };
+		39405FF01DCEAB1C0049A96D /* NVActivityIndicatorView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF21DCEAEA90049A96D /* HexaColor.swift */; };
+		39405FF51DCEAEF30049A96D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF41DCEAEF30049A96D /* Utils.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -47,6 +52,7 @@
 			files = (
 				39EE5BA81DCE34ED00A82D80 /* Alamofire.framework in CopyFiles */,
 				39EE5BA91DCE34ED00A82D80 /* RxBlocking.framework in CopyFiles */,
+				39405FF01DCEAB1C0049A96D /* NVActivityIndicatorView.framework in CopyFiles */,
 				39EE5BAA1DCE34ED00A82D80 /* RxCocoa.framework in CopyFiles */,
 				39EE5BAB1DCE34ED00A82D80 /* RxSwift.framework in CopyFiles */,
 				39EE5BAD1DCE34ED00A82D80 /* SwiftyJSON.framework in CopyFiles */,
@@ -72,6 +78,9 @@
 		392001151DC105850083B942 /* NumericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumericTableViewCell.xib; path = Questionnaire/Cells/NumericTableViewCell.xib; sourceTree = "<group>"; };
 		39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireRepository.swift; path = Data/Source/QuestionnaireRepository.swift; sourceTree = "<group>"; };
 		39405FEB1DCE8F020049A96D /* QuestionTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTypes.swift; path = Data/Models/QuestionTypes.swift; sourceTree = "<group>"; };
+		39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		39405FF21DCEAEA90049A96D /* HexaColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HexaColor.swift; path = Utils/HexaColor.swift; sourceTree = "<group>"; };
+		39405FF41DCEAEF30049A96D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -91,10 +100,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */,
+				39405FEF1DCEAB1C0049A96D /* NVActivityIndicatorView.framework in Frameworks */,
 				39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */,
 				39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */,
 				39EE5BA41DCE34B400A82D80 /* RxSwift.framework in Frameworks */,
 				39EE5BA61DCE34B400A82D80 /* SwiftyJSON.framework in Frameworks */,
+				39405FEE1DCEAB110049A96D /* NVActivityIndicatorView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +132,7 @@
 		392000F11DC0F0880083B942 /* Questionnaire */ = {
 			isa = PBXGroup;
 			children = (
+				39405FF11DCEAE610049A96D /* Utils */,
 				39EE5BBD1DCE7B4800A82D80 /* Injection */,
 				39EE5BB11DCE77C600A82D80 /* Data */,
 				392001081DC0F8C40083B942 /* Stadistics */,
@@ -164,9 +176,19 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		39405FF11DCEAE610049A96D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				39405FF21DCEAEA90049A96D /* HexaColor.swift */,
+				39405FF41DCEAEF30049A96D /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		39EE5B9A1DCE34B200A82D80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */,
 				39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */,
 				39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */,
 				39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */,
@@ -318,6 +340,7 @@
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
 				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
 				392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */,
+				39405FF51DCEAEF30049A96D /* Utils.swift in Sources */,
 				3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */,
 				392000F51DC0F0880083B942 /* FirstViewController.swift in Sources */,
 				39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */,
@@ -325,6 +348,7 @@
 				39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
 				39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */,
+				39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
