@@ -28,6 +28,7 @@
 		39405FF51DCEAEF30049A96D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF41DCEAEF30049A96D /* Utils.swift */; };
 		39405FF81DCF1FF70049A96D /* questionnaire.json in Resources */ = {isa = PBXBuildFile; fileRef = 39405FF71DCF1FF70049A96D /* questionnaire.json */; };
 		39405FFA1DCF202B0049A96D /* QuestionnaireFileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF91DCF202B0049A96D /* QuestionnaireFileSource.swift */; };
+		39405FFC1DCF36620049A96D /* DisplayableQuestionnaireState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FFB1DCF36620049A96D /* DisplayableQuestionnaireState.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -85,6 +86,7 @@
 		39405FF41DCEAEF30049A96D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
 		39405FF71DCF1FF70049A96D /* questionnaire.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questionnaire.json; path = Data/Files/questionnaire.json; sourceTree = "<group>"; };
 		39405FF91DCF202B0049A96D /* QuestionnaireFileSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireFileSource.swift; path = Data/Source/QuestionnaireFileSource.swift; sourceTree = "<group>"; };
+		39405FFB1DCF36620049A96D /* DisplayableQuestionnaireState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayableQuestionnaireState.swift; path = Questionnaire/DisplayableQuestionnaireState.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				3920010F1DC104C40083B942 /* Cells */,
 				392001091DC100FE0083B942 /* QuestionnaireViewController.swift */,
 				3920010B1DC101160083B942 /* QuestionnaireViewModel.swift */,
+				39405FFB1DCF36620049A96D /* DisplayableQuestionnaireState.swift */,
 			);
 			name = Questionnarie;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */,
 				39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
+				39405FFC1DCF36620049A96D /* DisplayableQuestionnaireState.swift in Sources */,
 				39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */,
 				39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */,
 				39405FFA1DCF202B0049A96D /* QuestionnaireFileSource.swift in Sources */,

@@ -11,6 +11,9 @@ import RxSwift
 
 class QuestionnaireViewController: UIViewController {
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var questionsPageControl: UIPageControl!
+    @IBOutlet weak var titleLabel: UILabel!
     var mQuestionnaire : Questionnaire?
     var mViewModel : QuestionnaireViewModel?
     let mDisposeBag = DisposeBag()
@@ -21,10 +24,8 @@ class QuestionnaireViewController: UIViewController {
         if mQuestionnaire == nil{
             //Init viewModel
             mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo())
-            //Start listening from streams
-            bind()
-            //Get questionnaire info
-            mViewModel?.startQuestionnaire()
+            //Get questionnaire info. The first question will be send as soon as we get the questionnaire
+            _ = mViewModel?.startQuestionnaire()
         }else{
             //Init viewModel with a questionnaire
             mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo(), questionnaire: mQuestionnaire!)
@@ -39,24 +40,49 @@ class QuestionnaireViewController: UIViewController {
         
         mViewModel?.getTextQuestionStream()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in print(q)})
+            .subscribe(onNext: { q in
+            })
             .addDisposableTo(mDisposeBag)
         
         mViewModel?.getNumberQuestionStream()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in print(q)})
+            .subscribe(onNext: { q in
+            })
             .addDisposableTo(mDisposeBag)
         
         mViewModel?.getSingleOptionQuestionStream()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in print(q)})
+            .subscribe(onNext: { q in
+            })
             .addDisposableTo(mDisposeBag)
         
         mViewModel?.getMultipleOptionQuestionStream()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in print(q)})
+            .subscribe(onNext: { q in
+            })
             .addDisposableTo(mDisposeBag)
         
+        mViewModel?.getQuestionnaireStateUpdates()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { state in self.updateUI(state: state)})
+            .addDisposableTo(mDisposeBag)
+    }
+    
+    func updateUI(state : DisplayableQuestionnaireState){
+        self.titleLabel.text = state.question
+        
+        navigationBar.topItem?.title = state.hint
+        questionsPageControl.numberOfPages = state.questionsCount
+        questionsPageControl.currentPage = state.currentIndex
+    }
+    
+    
+    @IBAction func actionNext(_ sender: Any) {
+        mViewModel?.sendNextQuestion()
+    }
+    
+    @IBAction func actionPrevious(_ sender: Any) {
+        mViewModel?.sendPrevioustQuestion()
     }
     
     /// Called when user wants to exit. We will ask
