@@ -23,7 +23,7 @@ class ChoiceHelper{
         case .numeric:
             return NumberChoice(questionId: questionId, json: json)
         case .singleOption, .multipleOption:
-            return OptionChoice(questionId: questionId, json: json)
+            return SelectionChoice(questionId: questionId, json: json)
         default:
             return nil
         }
@@ -73,7 +73,7 @@ class NumberChoice : Choice{
     }
 }
 
-class OptionChoice : Choice{
+class SelectionChoice : Choice{
     let id: String
     let questionId: String
     let label : String

@@ -12,6 +12,7 @@ class NumericTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var numberLabel: UILabel!
     
+    var mChoice : NumberChoice?
     var value = 0
     var min = 0
     var max = 1000
@@ -35,6 +36,7 @@ class NumericTableViewCell: UITableViewCell, ChoiceCell {
     
     func setData(choice: Choice) {
         if let numberChoice = choice as? NumberChoice{
+            mChoice = numberChoice
             min = numberChoice.min
             max = numberChoice.max
             updateValue(numberChoice.value)
@@ -42,8 +44,12 @@ class NumericTableViewCell: UITableViewCell, ChoiceCell {
     }
     
     func updateValue(_ newValue : Int){
+        //Update displayable value
         value = newValue
+        //Update view
         self.numberLabel.text = "\(value)"
+        //Update model value
+        mChoice?.value = value
     }
     
 }

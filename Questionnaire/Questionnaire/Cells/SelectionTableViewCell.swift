@@ -11,6 +11,9 @@ import UIKit
 class SelectionTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    
+    var mChoice : SelectionChoice?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,13 +21,14 @@ class SelectionTableViewCell: UITableViewCell, ChoiceCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        mChoice?.value = selected
     }
     
     func setData(choice: Choice){
-        if let optionChoice = choice as? OptionChoice{
-            self.titleLabel.text = optionChoice.label
+        if let selectionChoice = choice as? SelectionChoice{
+            mChoice = selectionChoice
+            self.titleLabel.text = selectionChoice.label
+            
         }
     }
 

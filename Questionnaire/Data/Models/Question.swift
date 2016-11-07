@@ -37,7 +37,6 @@ class Question {
         return Question(id: id, name: name, type: type, title: title, choices: choices)
     }
     
-    
     func getType() -> QuestionTypes{
         return Question.getTypeFromString(self.type)
     }
@@ -56,5 +55,16 @@ class Question {
             return .none
         }
     }
+    
+    func getAnswers() -> [Answer]{
+        var result = [Answer]()
+        for choice in choices {
+            if let answer = choice?.getAnswer(){
+                result.append(answer)
+            }
+        }
+        return result
+    }
+    
     
 }

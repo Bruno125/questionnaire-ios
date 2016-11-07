@@ -16,6 +16,9 @@ class QuestionnaireViewModel: NSObject {
     private var mQuestionnaire: Questionnaire?
     private var mCurrentIndex = -1
     
+    private var mAnswers = [Answer]()
+    private var mAnswersTrace = [Int]()
+    
     init(source: QuestionnaireRepo) {
         mSource = source
     }
@@ -28,6 +31,7 @@ class QuestionnaireViewModel: NSObject {
     
     private let questionsSubject = PublishSubject<Question>()
     private let questionnaireStateSubject = PublishSubject<DisplayableQuestionnaireState>()
+    private let errorsSubject = PublishSubject<String>()
     
     func getQuestionStream() -> Observable<Question> {
         return questionsSubject.asObservable()
@@ -38,8 +42,14 @@ class QuestionnaireViewModel: NSObject {
         return questionnaireStateSubject.asObservable()
     }
     
+    func getErrorStream() -> Observable<String>{
+        return errorsSubject.asObservable()
+    }
+    
     func startQuestionnaire() -> Observable<Questionnaire>{
         mCurrentIndex = -1
+        mAnswers = [Answer]()
+        mAnswersTrace = [Int]()
         
         return Observable.create { observer in
             self.mSource.getQuestionnaire().subscribe(onNext: { q in
@@ -55,26 +65,49 @@ class QuestionnaireViewModel: NSObject {
         }
     }
     
-    func registerAnswerable(){
+    func sendNextQuestion(){
+        //Do nothing if we have no questions or if we are already at the final step
+        if mQuestionnaire == nil {
+            return
+        }
+        
+        //Get answers for the current question
+        if mCurrentIndex != -1{
+            let question = getCurrentQuestion()!
+            let answersForCurrentQuestion = question.getAnswers()
+            //Throw error if no answer available
+            if answersForCurrentQuestion.isEmpty {
+                errorsSubject.onNext(getErrorMessage(type: question.getType()))
+                return
+            }
+            
+            //Append answers
+            mAnswers.append(contentsOf: answersForCurrentQuestion)
+            mAnswersTrace.append(answersForCurrentQuestion.count)
+        }
+        
+        
+        let isLast = mCurrentIndex + 1 >= mQuestionnaire!.questions.count
+        if isLast {
+            //Finish and save answers
+        }else{
+            //Procceed to next question
+            mCurrentIndex += 1
+            //Develiver next question
+            deliverQuestion()
+        }
         
     }
     
-    func sendNextQuestion(){
-        //Do nothing if we have no questions or if we are already at the final step
-        if mQuestionnaire == nil || mCurrentIndex + 1 >= mQuestionnaire!.questions.count{
-            return
-        }
-        //Update current question
-        mCurrentIndex += 1
-        //Develiver question
-        deliverQuestion()
-    }
-    
     func sendPreviousQuestion(){
-        //Do nothing if we have no questions or if we are already at the first step
-        if mCurrentIndex == 0{
+        //Do nothing if we have no questions
+        if mQuestionnaire == nil || mCurrentIndex == 0{
             return
         }
+        
+        //Remove answers from previous question
+        mAnswers.removeLast(mAnswersTrace.removeLast())
+        
         //Update current question
         mCurrentIndex -= 1
         //Develiver question
@@ -83,7 +116,7 @@ class QuestionnaireViewModel: NSObject {
     
     func deliverQuestion(){
         //Get question
-        let question = mQuestionnaire!.questions[mCurrentIndex]
+        let question = getCurrentQuestion()!
 
         //Send questionnaire state update
         questionnaireStateSubject.onNext(DisplayableQuestionnaireState(
@@ -97,6 +130,10 @@ class QuestionnaireViewModel: NSObject {
         questionsSubject.onNext(question)
     }
     
+    private func getCurrentQuestion() -> Question?{
+        return mQuestionnaire?.questions[mCurrentIndex]
+    }
+    
     private func getQuestionnaireHint() -> String{
         return "Question \(mCurrentIndex + 1) of \(getQuestionnaireCount())"
     }
@@ -107,6 +144,21 @@ class QuestionnaireViewModel: NSObject {
     
     private func getCurrentIndex() -> Int {
         return mCurrentIndex
+    }
+    
+    private func getErrorMessage(type: QuestionTypes) -> String{
+        switch type {
+        case .text:
+            return "Fill the text field"
+        case .numeric:
+            return "Invalid number"
+        case .singleOption:
+            return "Pick one option"
+        case .multipleOption:
+            return "Pick at least one option"
+        default:
+            return ""
+        }
     }
     
 }

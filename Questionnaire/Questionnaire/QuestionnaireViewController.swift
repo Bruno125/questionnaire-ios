@@ -130,7 +130,7 @@ extension QuestionnaireViewController : UITableViewDataSource{
         default:
             cell = UITableViewCell()
         }
-        
+        //If cell and bind data from choice
         if let choiceCell = cell as? ChoiceCell{
             let choice = mCurrentQuestion!.choices[indexPath.row]
             choiceCell.setData(choice: choice!)

@@ -12,6 +12,8 @@ class TextTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var textField: UITextField!
     
+    private var mChoice : TextChoice?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,8 +27,14 @@ class TextTableViewCell: UITableViewCell, ChoiceCell {
     
     func setData(choice: Choice){
         if let textChoice = choice as? TextChoice{
+            self.mChoice = textChoice
             self.textField.placeholder = textChoice.hint
+            self.textField.addTarget(self, action: #selector(listenTextFieldChanges), for: UIControlEvents.editingChanged)
         }
+    }
+    
+    func listenTextFieldChanges (textField : UITextField){
+        self.mChoice?.value = textField.text!
     }
     
 }
