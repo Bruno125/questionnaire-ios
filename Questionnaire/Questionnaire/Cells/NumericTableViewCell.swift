@@ -11,12 +11,26 @@ import UIKit
 class NumericTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var amountStepper: UIStepper!
+    
+    var value = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func actionDecrease(_ sender: Any) {
+        if value>0{
+            value-=1
+        }
+        self.numberLabel.text = "\(value)"
+    }
+    
+    @IBAction func actionIncrease(_ sender: Any) {
+        value+=1
+        self.numberLabel.text = "\(value)"
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
