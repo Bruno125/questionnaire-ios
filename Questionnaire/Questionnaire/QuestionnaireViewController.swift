@@ -15,6 +15,8 @@ class QuestionnaireViewController: UIViewController {
     @IBOutlet weak var questionsPageControl: UIPageControl!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var previousButton: UIBarButtonItem!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     
     var mQuestionnaire : Questionnaire?
     var mViewModel : QuestionnaireViewModel?
@@ -65,6 +67,14 @@ class QuestionnaireViewController: UIViewController {
         questionsPageControl.numberOfPages = state.questionsCount
         questionsPageControl.currentPage = state.currentIndex
         
+        //Hide previous button on first question
+        let isFirst = state.currentIndex == 0
+        previousButton.title = isFirst ? "" : "Previous"
+        previousButton.isEnabled = !isFirst
+        //Change next button hint to Finish when we are about to finish the questionnaire
+        let isLast = state.currentIndex == state.questionsCount - 1
+        nextButton.title = isLast ? "Finish" : "Next"
+        //Update table selection style depending on current question type
         tableView.allowsSelection = state.questionType == .singleOption
         tableView.allowsMultipleSelection = state.questionType == .multipleOption
         

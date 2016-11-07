@@ -333,6 +333,8 @@
                     </view>
                     <connections>
                         <outlet property="navigationBar" destination="TRh-rE-DRA" id="GHN-hx-7hV"/>
+                        <outlet property="nextButton" destination="hnZ-ER-O2F" id="q5S-Ct-WqG"/>
+                        <outlet property="previousButton" destination="Zgi-8Z-k19" id="KdI-Rr-gmk"/>
                         <outlet property="questionsPageControl" destination="knl-Gl-HES" id="fd3-J5-NJv"/>
                         <outlet property="tableView" destination="C4e-4e-Qyw" id="c4F-kb-d2q"/>
                         <outlet property="titleLabel" destination="tmg-69-1JV" id="Ngs-aq-ojf"/>
