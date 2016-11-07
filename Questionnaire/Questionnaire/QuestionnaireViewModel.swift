@@ -26,27 +26,13 @@ class QuestionnaireViewModel: NSObject {
         mCurrentIndex = -1
     }
     
-    private let textSubject = PublishSubject<Question>()
-    private let numberSubject = PublishSubject<Question>()
-    private let singleOptionSubject = PublishSubject<Question>()
-    private let multipleOptionSubject = PublishSubject<Question>()
+    private let questionsSubject = PublishSubject<Question>()
     private let questionnaireStateSubject = PublishSubject<DisplayableQuestionnaireState>()
     
-    func getTextQuestionStream() -> Observable<Question> {
-        return textSubject.asObservable()
+    func getQuestionStream() -> Observable<Question> {
+        return questionsSubject.asObservable()
     }
     
-    func getNumberQuestionStream() -> Observable<Question> {
-        return numberSubject.asObservable()
-    }
-    
-    func getSingleOptionQuestionStream() -> Observable<Question> {
-        return singleOptionSubject.asObservable()
-    }
-    
-    func getMultipleOptionQuestionStream() -> Observable<Question> {
-        return multipleOptionSubject.asObservable()
-    }
     
     func getQuestionnaireStateUpdates() -> Observable<DisplayableQuestionnaireState>{
         return questionnaireStateSubject.asObservable()
@@ -94,26 +80,17 @@ class QuestionnaireViewModel: NSObject {
     func deliverQuestion(){
         //Get question
         let question = mQuestionnaire!.questions[mCurrentIndex]
-        //Deliver the question to the appropiate stream depending on its type
-        switch question.getType() {
-        case .text:
-            textSubject.onNext(question)
-        case .numeric:
-            numberSubject.onNext(question)
-        case .singleOption:
-            singleOptionSubject.onNext(question)
-        case .multipleOption:
-            multipleOptionSubject.onNext(question)
-        default: break
-        }
 
         //Send questionnaire state update
         questionnaireStateSubject.onNext(DisplayableQuestionnaireState(
             hint: getQuestionnaireHint(),
             question: question.title,
+            type: question.getType(),
             questionCount: getQuestionnaireCount(),
             currentIndex: mCurrentIndex))
         
+        //Deliver question choices stream
+        questionsSubject.onNext(question)
     }
     
     private func getQuestionnaireHint() -> String{

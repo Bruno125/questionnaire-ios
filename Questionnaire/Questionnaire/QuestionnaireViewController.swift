@@ -14,12 +14,18 @@ class QuestionnaireViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var questionsPageControl: UIPageControl!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var mQuestionnaire : Questionnaire?
     var mViewModel : QuestionnaireViewModel?
+    var mCurrentQuestion : Question?
     let mDisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         if mQuestionnaire == nil{
             //Init viewModel
@@ -38,27 +44,11 @@ class QuestionnaireViewController: UIViewController {
     
     func bind(){
         
-        mViewModel?.getTextQuestionStream()
+        mViewModel?.getQuestionStream()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in
-            })
-            .addDisposableTo(mDisposeBag)
-        
-        mViewModel?.getNumberQuestionStream()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in
-            })
-            .addDisposableTo(mDisposeBag)
-        
-        mViewModel?.getSingleOptionQuestionStream()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in
-            })
-            .addDisposableTo(mDisposeBag)
-        
-        mViewModel?.getMultipleOptionQuestionStream()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { q in
+            .subscribe(onNext: { question in
+                self.mCurrentQuestion = question
+                self.updateTableView()
             })
             .addDisposableTo(mDisposeBag)
         
@@ -74,6 +64,15 @@ class QuestionnaireViewController: UIViewController {
         navigationBar.topItem?.title = state.hint
         questionsPageControl.numberOfPages = state.questionsCount
         questionsPageControl.currentPage = state.currentIndex
+        
+        tableView.allowsSelection = state.questionType == .singleOption
+        tableView.allowsMultipleSelection = state.questionType == .multipleOption
+        
+    }
+    
+    func updateTableView(){
+        
+        self.tableView.reloadData()
     }
     
     
@@ -99,14 +98,53 @@ class QuestionnaireViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension QuestionnaireViewController : UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mCurrentQuestion == nil ? 0 : mCurrentQuestion!.choices.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch mCurrentQuestion!.getType() {
+        case .text:
+            return tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath)
+        case .numeric:
+            return tableView.dequeueReusableCell(withIdentifier: "NumericTableViewCell", for: indexPath)
+        case .singleOption, .multipleOption:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SelectionTableViewCell", for: indexPath) as!SelectionTableViewCell
+            let choice = mCurrentQuestion!.choices[indexPath.row]
+            cell.titleLabel.text = choice.label
+            cell.accessoryType = .none
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+}
+
+extension QuestionnaireViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.accessoryType = .checkmark
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.accessoryType = .none
+        }
+    }
+    
+}
+
+

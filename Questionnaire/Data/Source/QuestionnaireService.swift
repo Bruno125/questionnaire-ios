@@ -16,7 +16,7 @@ class QuestionnaireService: QuestionnaireRepo {
     
     static let sharedInstance = QuestionnaireService()
     
-    private let QUESTIONS_URL = "http://private-9d5799-questionnaireapp.apiary-mock.com/questions"
+    private let QUESTIONS_URL = "https://private-9d5799-questionnaireapp.apiary-mock.com/questionnaire"
     
     func getQuestionnaire() -> Observable<Questionnaire> {
         
