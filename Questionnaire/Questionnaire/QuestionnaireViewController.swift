@@ -32,12 +32,17 @@ class QuestionnaireViewController: UIViewController {
         
         if mQuestionnaire == nil{
             //Init viewModel
-            mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo())
+            mViewModel = QuestionnaireViewModel(
+                source: Injection.getQuestionnaireRepo(),
+                answerRepo: Injection.getAnswerRepo())
             //Get questionnaire info. The first question will be send as soon as we get the questionnaire
             _ = mViewModel?.startQuestionnaire()
         }else{
             //Init viewModel with a questionnaire
-            mViewModel = QuestionnaireViewModel(source: Injection.getQuestionnaireRepo(), questionnaire: mQuestionnaire!)
+            mViewModel = QuestionnaireViewModel(
+                source: Injection.getQuestionnaireRepo(),
+                answerRepo: Injection.getAnswerRepo(),
+                questionnaire: mQuestionnaire!)
             //Start listening from streams
             bind()
             //We already have a questionnaire, so we request the first question

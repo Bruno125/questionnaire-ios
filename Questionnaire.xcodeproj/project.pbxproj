@@ -34,6 +34,10 @@
 		39459B431DD0BD4000D967A2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		39459B441DD0BD6E00D967A2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		39459B451DD0BD6E00D967A2 /* ToastSwiftFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39459B481DD0C39000D967A2 /* Questionnaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39459B461DD0C39000D967A2 /* Questionnaire.xcdatamodeld */; };
+		39459B4A1DD0C5E800D967A2 /* AnswerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B491DD0C5E800D967A2 /* AnswerRepo.swift */; };
+		39459B4C1DD0C64500D967A2 /* AnswerCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B4B1DD0C64500D967A2 /* AnswerCoreData.swift */; };
+		39459B4E1DD0CB9C00D967A2 /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B4D1DD0CB9C00D967A2 /* AnswerRepository.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -96,6 +100,10 @@
 		39459B3E1DD09C5900D967A2 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Choice.swift; path = Data/Models/Choice.swift; sourceTree = "<group>"; };
 		39459B401DD0A7C800D967A2 /* ChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoiceCell.swift; path = Questionnaire/Cells/ChoiceCell.swift; sourceTree = "<group>"; };
 		39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
+		39459B471DD0C39000D967A2 /* Questionnaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Questionnaire.xcdatamodel; sourceTree = "<group>"; };
+		39459B491DD0C5E800D967A2 /* AnswerRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerRepo.swift; path = Data/Source/AnswerRepo.swift; sourceTree = "<group>"; };
+		39459B4B1DD0C64500D967A2 /* AnswerCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerCoreData.swift; path = Data/Source/AnswerCoreData.swift; sourceTree = "<group>"; };
+		39459B4D1DD0CB9C00D967A2 /* AnswerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerRepository.swift; path = Data/Source/AnswerRepository.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -243,6 +251,10 @@
 				39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */,
 				39405FE91DCE81270049A96D /* QuestionnaireRepository.swift */,
 				39405FF91DCF202B0049A96D /* QuestionnaireFileSource.swift */,
+				39459B461DD0C39000D967A2 /* Questionnaire.xcdatamodeld */,
+				39459B491DD0C5E800D967A2 /* AnswerRepo.swift */,
+				39459B4B1DD0C64500D967A2 /* AnswerCoreData.swift */,
+				39459B4D1DD0CB9C00D967A2 /* AnswerRepository.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -364,13 +376,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				392000F71DC0F0880083B942 /* SecondViewController.swift in Sources */,
+				39459B481DD0C39000D967A2 /* Questionnaire.xcdatamodeld in Sources */,
+				39459B4C1DD0C64500D967A2 /* AnswerCoreData.swift in Sources */,
 				39405FEC1DCE8F020049A96D /* QuestionTypes.swift in Sources */,
 				39459B3F1DD09C5900D967A2 /* Choice.swift in Sources */,
 				39405FFE1DCF54780049A96D /* SelectionTableViewCell.swift in Sources */,
 				39459B3D1DD09B0400D967A2 /* Answer.swift in Sources */,
 				392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
+				39459B4E1DD0CB9C00D967A2 /* AnswerRepository.swift in Sources */,
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
+				39459B4A1DD0C5E800D967A2 /* AnswerRepo.swift in Sources */,
 				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
 				392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */,
 				39405FF51DCEAEF30049A96D /* Utils.swift in Sources */,
@@ -557,6 +573,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		39459B461DD0C39000D967A2 /* Questionnaire.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39459B471DD0C39000D967A2 /* Questionnaire.xcdatamodel */,
+			);
+			currentVersion = 39459B471DD0C39000D967A2 /* Questionnaire.xcdatamodel */;
+			name = Questionnaire.xcdatamodeld;
+			path = Data/Source/Questionnaire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 392000E71DC0F0880083B942 /* Project object */;
 }

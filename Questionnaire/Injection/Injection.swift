@@ -14,4 +14,8 @@ class Injection: NSObject {
         return QuestionnaireRepository.sharedInstance
     }
     
+    static func getAnswerRepo() -> AnswerRepo {
+        return AnswerRepository.sharedInstance
+    }
+    
 }

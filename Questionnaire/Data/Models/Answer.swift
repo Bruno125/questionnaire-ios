@@ -7,21 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class Answer: NSObject {
     
     let questionId : String
     let choiceId: String
-    let value : Int?
+    let value : Int64?
     let label : String?
     
-    init(questionId :String, choiceId :String, value :Int?, label :String?) {
+    init(questionId :String, choiceId :String, value :Int64?, label :String?) {
         self.questionId = questionId
         self.choiceId = choiceId
         self.value = value
         self.label = label
     }
-    
 }
 
 ///Protocol which can provide an answer

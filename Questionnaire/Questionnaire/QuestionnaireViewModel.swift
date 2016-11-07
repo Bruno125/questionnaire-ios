@@ -12,6 +12,7 @@ import RxSwift
 class QuestionnaireViewModel: NSObject {
     
     private let mSource : QuestionnaireRepo
+    private let mAnswerSource : AnswerRepo
     private let mDisposeBag = DisposeBag()
     private var mQuestionnaire: Questionnaire?
     private var mCurrentIndex = -1
@@ -19,12 +20,14 @@ class QuestionnaireViewModel: NSObject {
     private var mAnswers = [Answer]()
     private var mAnswersTrace = [Int]()
     
-    init(source: QuestionnaireRepo) {
+    init(source: QuestionnaireRepo, answerRepo: AnswerRepo) {
         mSource = source
+        mAnswerSource = answerRepo
     }
     
-    init(source: QuestionnaireRepo, questionnaire: Questionnaire){
+    init(source: QuestionnaireRepo, answerRepo: AnswerRepo, questionnaire: Questionnaire){
         mSource = source
+        mAnswerSource = answerRepo
         mQuestionnaire = questionnaire
         mCurrentIndex = -1
     }
@@ -90,6 +93,13 @@ class QuestionnaireViewModel: NSObject {
         let isLast = mCurrentIndex + 1 >= mQuestionnaire!.questions.count
         if isLast {
             //Finish and save answers
+            let success = mAnswerSource.save(answers: mAnswers)
+            if success {
+                //Notify questionnaire completion
+            }else{
+                //Remove answers from previous question
+                mAnswers.removeLast(mAnswersTrace.removeLast())
+            }
         }else{
             //Procceed to next question
             mCurrentIndex += 1
