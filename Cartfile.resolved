@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" "4.0.1"
 github "ninjaprox/NVActivityIndicatorView" "v3.0"
-github "ReactiveX/RxSwift" "3.0.0"
+github "ReactiveX/RxSwift" "3.0.1"
 github "SwiftyJSON/SwiftyJSON" "v3.1.1"
+github "scalessec/Toast-Swift" "2.0.0"

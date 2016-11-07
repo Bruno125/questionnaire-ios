@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import ToastSwiftFramework
 
 class QuestionnaireViewController: UIViewController {
 
@@ -58,6 +59,12 @@ class QuestionnaireViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { state in self.updateUI(state: state)})
             .addDisposableTo(mDisposeBag)
+        
+        mViewModel?.getErrorStream()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { msg in self.view.makeToast(msg) })
+            .addDisposableTo(mDisposeBag)
+        
     }
     
     func updateUI(state : DisplayableQuestionnaireState){

@@ -31,6 +31,9 @@
 		39459B3D1DD09B0400D967A2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B3C1DD09B0400D967A2 /* Answer.swift */; };
 		39459B3F1DD09C5900D967A2 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B3E1DD09C5900D967A2 /* Choice.swift */; };
 		39459B411DD0A7C800D967A2 /* ChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B401DD0A7C800D967A2 /* ChoiceCell.swift */; };
+		39459B431DD0BD4000D967A2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
+		39459B441DD0BD6E00D967A2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
+		39459B451DD0BD6E00D967A2 /* ToastSwiftFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -56,6 +59,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				39EE5BA81DCE34ED00A82D80 /* Alamofire.framework in CopyFiles */,
+				39459B451DD0BD6E00D967A2 /* ToastSwiftFramework.framework in CopyFiles */,
 				39EE5BA91DCE34ED00A82D80 /* RxBlocking.framework in CopyFiles */,
 				39405FF01DCEAB1C0049A96D /* NVActivityIndicatorView.framework in CopyFiles */,
 				39EE5BAA1DCE34ED00A82D80 /* RxCocoa.framework in CopyFiles */,
@@ -91,6 +95,7 @@
 		39459B3C1DD09B0400D967A2 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Answer.swift; path = Data/Models/Answer.swift; sourceTree = "<group>"; };
 		39459B3E1DD09C5900D967A2 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Choice.swift; path = Data/Models/Choice.swift; sourceTree = "<group>"; };
 		39459B401DD0A7C800D967A2 /* ChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoiceCell.swift; path = Questionnaire/Cells/ChoiceCell.swift; sourceTree = "<group>"; };
+		39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -113,9 +118,11 @@
 				39405FEF1DCEAB1C0049A96D /* NVActivityIndicatorView.framework in Frameworks */,
 				39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */,
 				39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */,
+				39459B441DD0BD6E00D967A2 /* ToastSwiftFramework.framework in Frameworks */,
 				39EE5BA41DCE34B400A82D80 /* RxSwift.framework in Frameworks */,
 				39EE5BA61DCE34B400A82D80 /* SwiftyJSON.framework in Frameworks */,
 				39405FEE1DCEAB110049A96D /* NVActivityIndicatorView.framework in Frameworks */,
+				39459B431DD0BD4000D967A2 /* ToastSwiftFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +214,7 @@
 		39EE5B9A1DCE34B200A82D80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */,
 				39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */,
 				39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */,
 				39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */,
