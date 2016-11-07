@@ -55,6 +55,10 @@ class QuestionnaireViewModel: NSObject {
         }
     }
     
+    func registerAnswerable(){
+        
+    }
+    
     func sendNextQuestion(){
         //Do nothing if we have no questions or if we are already at the final step
         if mQuestionnaire == nil || mCurrentIndex + 1 >= mQuestionnaire!.questions.count{
@@ -66,7 +70,7 @@ class QuestionnaireViewModel: NSObject {
         deliverQuestion()
     }
     
-    func sendPrevioustQuestion(){
+    func sendPreviousQuestion(){
         //Do nothing if we have no questions or if we are already at the first step
         if mCurrentIndex == 0{
             return

@@ -9,24 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-class Choice{
-    let label : String
-    var value : Int = 0
-    
-    init(label: String, value :Int) {
-        self.label = label
-        self.value = value
-    }
-}
-
 class Question {
+    let id: String
     let name: String
     let type: String
     let title: String
     
-    let choices: [Choice]
+    let choices: [Choice?]
     
-    init(name: String, type: String, title :String, choices :[Choice]) {
+    init(id :String, name: String, type: String, title :String, choices :[Choice?]) {
+        self.id = id
         self.name = name
         self.type = type
         self.title = title
@@ -34,19 +26,23 @@ class Question {
     }
     
     static func parse(json : JSON) -> Question{
+        let id = json["id"].stringValue
         let name = json["name"].stringValue
         let type = json["type"].stringValue
         let title = json["question"].stringValue
         
-        let choices = json["choices"].arrayValue.map({
-            Choice(label: $0["label"].stringValue, value: $0["label"].intValue)
-        })
+        let choices = json["choices"].arrayValue
+            .map({ChoiceHelper.parse(questionId: id, type: getTypeFromString(type), json: $0)})
         
-        return Question(name: name, type: type, title: title, choices: choices)
+        return Question(id: id, name: name, type: type, title: title, choices: choices)
     }
     
     
     func getType() -> QuestionTypes{
+        return Question.getTypeFromString(self.type)
+    }
+    
+    static func getTypeFromString(_ type: String) -> QuestionTypes{
         switch type {
         case "text":
             return .text
@@ -60,6 +56,5 @@ class Question {
             return .none
         }
     }
-    
     
 }

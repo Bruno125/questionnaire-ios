@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectionTableViewCell: UITableViewCell {
+class SelectionTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
@@ -20,6 +20,12 @@ class SelectionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setData(choice: Choice){
+        if let optionChoice = choice as? OptionChoice{
+            self.titleLabel.text = optionChoice.label
+        }
     }
 
 }

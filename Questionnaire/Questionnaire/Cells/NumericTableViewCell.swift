@@ -8,11 +8,13 @@
 
 import UIKit
 
-class NumericTableViewCell: UITableViewCell {
+class NumericTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var numberLabel: UILabel!
     
     var value = 0
+    var min = 0
+    var max = 1000
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,21 +22,28 @@ class NumericTableViewCell: UITableViewCell {
     }
 
     @IBAction func actionDecrease(_ sender: Any) {
-        if value>0{
-            value-=1
+        if value>min{
+            updateValue(value - 1)
         }
-        self.numberLabel.text = "\(value)"
     }
     
     @IBAction func actionIncrease(_ sender: Any) {
-        value+=1
-        self.numberLabel.text = "\(value)"
+        if value < max {
+            updateValue(value + 1)
+        }
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setData(choice: Choice) {
+        if let numberChoice = choice as? NumberChoice{
+            min = numberChoice.min
+            max = numberChoice.max
+            updateValue(numberChoice.value)
+        }
+    }
+    
+    func updateValue(_ newValue : Int){
+        value = newValue
+        self.numberLabel.text = "\(value)"
     }
     
 }

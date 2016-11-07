@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextTableViewCell: UITableViewCell {
+class TextTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var textField: UITextField!
     
@@ -21,6 +21,12 @@ class TextTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setData(choice: Choice){
+        if let textChoice = choice as? TextChoice{
+            self.textField.placeholder = textChoice.hint
+        }
     }
     
 }

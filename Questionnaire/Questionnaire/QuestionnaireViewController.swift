@@ -91,7 +91,7 @@ class QuestionnaireViewController: UIViewController {
     }
     
     @IBAction func actionPrevious(_ sender: Any) {
-        mViewModel?.sendPrevioustQuestion()
+        mViewModel?.sendPreviousQuestion()
     }
     
     /// Called when user wants to exit. We will ask
@@ -117,20 +117,26 @@ extension QuestionnaireViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Instantiate proper cell depending on question type
+        let cell : UITableViewCell
         switch mCurrentQuestion!.getType() {
         case .text:
-            return tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath)
         case .numeric:
-            return tableView.dequeueReusableCell(withIdentifier: "NumericTableViewCell", for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "NumericTableViewCell", for: indexPath)
         case .singleOption, .multipleOption:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SelectionTableViewCell", for: indexPath) as!SelectionTableViewCell
-            let choice = mCurrentQuestion!.choices[indexPath.row]
-            cell.titleLabel.text = choice.label
+            cell = tableView.dequeueReusableCell(withIdentifier: "SelectionTableViewCell", for: indexPath)
             cell.accessoryType = .none
-            return cell
         default:
-            return UITableViewCell()
+            cell = UITableViewCell()
         }
+        
+        if let choiceCell = cell as? ChoiceCell{
+            let choice = mCurrentQuestion!.choices[indexPath.row]
+            choiceCell.setData(choice: choice!)
+        }
+        
+        return cell
     }
 }
 
