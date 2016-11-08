@@ -10,20 +10,25 @@ import UIKit
 
 class StatisticNumericPageViewController: UIPageViewController {
 
+    var question : Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //We will provide the viewControllers
         dataSource = self
-        //Set first view
         setViewControllers([getGraphVC()], direction: .forward, animated: false, completion: nil)
     }
-
+    
     func getGraphVC() -> NumericGraphViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "NumericGraphViewController") as! NumericGraphViewController
+        let vc = storyboard!.instantiateViewController(withIdentifier: "NumericGraphViewController") as! NumericGraphViewController
+        vc.question = question
+        return vc
     }
     
     func getStatsVC() -> NumericStatsViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "NumericStatsViewController") as! NumericStatsViewController
+        let vc = storyboard!.instantiateViewController(withIdentifier: "NumericStatsViewController") as! NumericStatsViewController
+        vc.question = question
+        return vc
     }
     
 }

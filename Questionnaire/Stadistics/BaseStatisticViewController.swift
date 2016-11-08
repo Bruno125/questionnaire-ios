@@ -11,12 +11,13 @@ import UIKit
 class BaseStatisticViewController: UIViewController {
 
     var question : Question?
+    var requiresQuestionOnLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Exit if question is nil
-        if question == nil {
+        if requiresQuestionOnLoad && question == nil {
             dismiss(animated: true, completion: nil)
             return
         }

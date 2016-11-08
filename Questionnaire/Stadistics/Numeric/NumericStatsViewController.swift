@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NumericStatsViewController: UIViewController {
+class NumericStatsViewController: BaseStatisticViewController {
 
     override func viewDidLoad() {
+        requiresQuestionOnLoad = false
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
