@@ -3,3 +3,4 @@ github "SwiftyJSON/SwiftyJSON"
 github "ReactiveX/RxSwift" ~> 3.0
 github "ninjaprox/NVActivityIndicatorView"
 github "scalessec/Toast-Swift" ~> 2.0.0
+github "danielgindi/Charts" == 3.0.0

@@ -39,6 +39,14 @@
 		39459B4E1DD0CB9C00D967A2 /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B4D1DD0CB9C00D967A2 /* AnswerRepository.swift */; };
 		39459B501DD0DD8000D967A2 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */; };
 		39459B521DD0DD9400D967A2 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */; };
+		39459B551DD1347000D967A2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
+		39459B561DD1347500D967A2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
+		39459B571DD1347500D967A2 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39459B5A1DD24E1300D967A2 /* StatisticNumericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B591DD24E1300D967A2 /* StatisticNumericViewController.swift */; };
+		39459B5C1DD24E7000D967A2 /* BaseStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B5B1DD24E7000D967A2 /* BaseStatisticViewController.swift */; };
+		39459B5E1DD2504000D967A2 /* StatisticNumericPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B5D1DD2504000D967A2 /* StatisticNumericPageViewController.swift */; };
+		39459B601DD2508A00D967A2 /* NumericGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B5F1DD2508A00D967A2 /* NumericGraphViewController.swift */; };
+		39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B611DD250A200D967A2 /* NumericStatsViewController.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -64,6 +72,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				39EE5BA81DCE34ED00A82D80 /* Alamofire.framework in CopyFiles */,
+				39459B571DD1347500D967A2 /* Charts.framework in CopyFiles */,
 				39459B451DD0BD6E00D967A2 /* ToastSwiftFramework.framework in CopyFiles */,
 				39EE5BA91DCE34ED00A82D80 /* RxBlocking.framework in CopyFiles */,
 				39405FF01DCEAB1C0049A96D /* NVActivityIndicatorView.framework in CopyFiles */,
@@ -106,6 +115,12 @@
 		39459B4D1DD0CB9C00D967A2 /* AnswerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerRepository.swift; path = Data/Source/AnswerRepository.swift; sourceTree = "<group>"; };
 		39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsViewController.swift; path = Stadistics/QuestionsViewController.swift; sourceTree = "<group>"; };
 		39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsViewModel.swift; path = Stadistics/QuestionsViewModel.swift; sourceTree = "<group>"; };
+		39459B541DD1347000D967A2 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		39459B591DD24E1300D967A2 /* StatisticNumericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticNumericViewController.swift; path = Stadistics/Numeric/StatisticNumericViewController.swift; sourceTree = "<group>"; };
+		39459B5B1DD24E7000D967A2 /* BaseStatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseStatisticViewController.swift; path = Stadistics/BaseStatisticViewController.swift; sourceTree = "<group>"; };
+		39459B5D1DD2504000D967A2 /* StatisticNumericPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticNumericPageViewController.swift; path = Stadistics/Numeric/StatisticNumericPageViewController.swift; sourceTree = "<group>"; };
+		39459B5F1DD2508A00D967A2 /* NumericGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericGraphViewController.swift; path = Stadistics/Numeric/NumericGraphViewController.swift; sourceTree = "<group>"; };
+		39459B611DD250A200D967A2 /* NumericStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericStatsViewController.swift; path = Stadistics/Numeric/NumericStatsViewController.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -133,6 +148,8 @@
 				39EE5BA61DCE34B400A82D80 /* SwiftyJSON.framework in Frameworks */,
 				39405FEE1DCEAB110049A96D /* NVActivityIndicatorView.framework in Frameworks */,
 				39459B431DD0BD4000D967A2 /* ToastSwiftFramework.framework in Frameworks */,
+				39459B561DD1347500D967A2 /* Charts.framework in Frameworks */,
+				39459B551DD1347000D967A2 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +179,7 @@
 				39405FF11DCEAE610049A96D /* Utils */,
 				39EE5BBD1DCE7B4800A82D80 /* Injection */,
 				39EE5BB11DCE77C600A82D80 /* Data */,
-				392001081DC0F8C40083B942 /* Stadistics */,
+				392001081DC0F8C40083B942 /* Statistics */,
 				392001071DC0F8A40083B942 /* Questionnarie */,
 				392000F21DC0F0880083B942 /* AppDelegate.swift */,
 				392000F41DC0F0880083B942 /* FirstViewController.swift */,
@@ -185,13 +202,15 @@
 			name = Questionnarie;
 			sourceTree = "<group>";
 		};
-		392001081DC0F8C40083B942 /* Stadistics */ = {
+		392001081DC0F8C40083B942 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				39459B581DD24DD000D967A2 /* Numeric */,
 				39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */,
 				39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */,
+				39459B5B1DD24E7000D967A2 /* BaseStatisticViewController.swift */,
 			);
-			name = Stadistics;
+			name = Statistics;
 			sourceTree = "<group>";
 		};
 		3920010F1DC104C40083B942 /* Cells */ = {
@@ -222,9 +241,21 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
+		39459B581DD24DD000D967A2 /* Numeric */ = {
+			isa = PBXGroup;
+			children = (
+				39459B591DD24E1300D967A2 /* StatisticNumericViewController.swift */,
+				39459B5D1DD2504000D967A2 /* StatisticNumericPageViewController.swift */,
+				39459B5F1DD2508A00D967A2 /* NumericGraphViewController.swift */,
+				39459B611DD250A200D967A2 /* NumericStatsViewController.swift */,
+			);
+			name = Numeric;
+			sourceTree = "<group>";
+		};
 		39EE5B9A1DCE34B200A82D80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39459B541DD1347000D967A2 /* Charts.framework */,
 				39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */,
 				39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */,
 				39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */,
@@ -381,7 +412,9 @@
 				39459B481DD0C39000D967A2 /* Questionnaire.xcdatamodeld in Sources */,
 				39459B4C1DD0C64500D967A2 /* AnswerCoreData.swift in Sources */,
 				39405FEC1DCE8F020049A96D /* QuestionTypes.swift in Sources */,
+				39459B601DD2508A00D967A2 /* NumericGraphViewController.swift in Sources */,
 				39459B3F1DD09C5900D967A2 /* Choice.swift in Sources */,
+				39459B5C1DD24E7000D967A2 /* BaseStatisticViewController.swift in Sources */,
 				39459B501DD0DD8000D967A2 /* QuestionsViewController.swift in Sources */,
 				39405FFE1DCF54780049A96D /* SelectionTableViewCell.swift in Sources */,
 				39459B3D1DD09B0400D967A2 /* Answer.swift in Sources */,
@@ -391,6 +424,8 @@
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
 				39459B4A1DD0C5E800D967A2 /* AnswerRepo.swift in Sources */,
 				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
+				39459B5E1DD2504000D967A2 /* StatisticNumericPageViewController.swift in Sources */,
+				39459B5A1DD24E1300D967A2 /* StatisticNumericViewController.swift in Sources */,
 				392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */,
 				39405FF51DCEAEF30049A96D /* Utils.swift in Sources */,
 				3920010A1DC100FE0083B942 /* QuestionnaireViewController.swift in Sources */,
@@ -398,6 +433,7 @@
 				39459B521DD0DD9400D967A2 /* QuestionsViewModel.swift in Sources */,
 				39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */,
 				39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */,
+				39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */,
 				39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
 				39405FFC1DCF36620049A96D /* DisplayableQuestionnaireState.swift in Sources */,

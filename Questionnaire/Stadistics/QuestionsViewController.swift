@@ -32,6 +32,32 @@ class QuestionsViewController: UIViewController {
             .addDisposableTo(mDisposeBag)
     }
     
+    func showQuestionStatistics(question :Question){
+        
+        //Redirect to proper viewController depending on the question type
+        var vc : BaseStatisticViewController?
+        switch question.getType() {
+        case .text:
+            break
+        case .numeric:
+            vc = storyboard!.instantiateViewController(withIdentifier: "StatisticNumericViewController") as! StatisticNumericViewController
+            vc?.question = question
+        case .singleOption:
+            break
+        case .multipleOption:
+            break
+        default:
+            return
+        }
+        
+        //Present view controller if was successfully instantiated
+        if vc != nil {
+            navigationController?.pushViewController(vc!, animated: true)
+        }
+        
+        
+    }
+    
 }
 
 extension QuestionsViewController : UITableViewDataSource{
@@ -52,6 +78,16 @@ extension QuestionsViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Show question statistics
+        let question = mQuestions[indexPath.row]
+        showQuestionStatistics(question: question)
+        
+        //Deselect selected row
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 }
