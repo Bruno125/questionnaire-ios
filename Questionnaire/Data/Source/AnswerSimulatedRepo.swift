@@ -45,7 +45,7 @@ class AnswerSimulatedRepo: AnswerRepo {
                         case .numeric:
                             answers.append(Answer(questionId: id, choiceId: choice, value: random, label: nil))
                         case .singleOption:
-                            answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: nil))
+                            answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: "Answer \(random)"))
                         case .multipleOption:
                             break //TODO
                         default:
