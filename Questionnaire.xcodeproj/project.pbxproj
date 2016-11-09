@@ -48,6 +48,7 @@
 		39459B601DD2508A00D967A2 /* NumericGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B5F1DD2508A00D967A2 /* NumericGraphViewController.swift */; };
 		39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B611DD250A200D967A2 /* NumericStatsViewController.swift */; };
 		39459B641DD2A39F00D967A2 /* StatisticNumericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B631DD2A39F00D967A2 /* StatisticNumericViewModel.swift */; };
+		3980D2E01DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D2DF1DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -123,6 +124,7 @@
 		39459B5F1DD2508A00D967A2 /* NumericGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericGraphViewController.swift; path = Stadistics/Numeric/NumericGraphViewController.swift; sourceTree = "<group>"; };
 		39459B611DD250A200D967A2 /* NumericStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericStatsViewController.swift; path = Stadistics/Numeric/NumericStatsViewController.swift; sourceTree = "<group>"; };
 		39459B631DD2A39F00D967A2 /* StatisticNumericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticNumericViewModel.swift; path = Stadistics/Numeric/StatisticNumericViewModel.swift; sourceTree = "<group>"; };
+		3980D2DF1DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericAnswerTableViewCell.swift; path = Stadistics/Numeric/NumericAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -246,11 +248,12 @@
 		39459B581DD24DD000D967A2 /* Numeric */ = {
 			isa = PBXGroup;
 			children = (
+				39459B631DD2A39F00D967A2 /* StatisticNumericViewModel.swift */,
 				39459B591DD24E1300D967A2 /* StatisticNumericViewController.swift */,
 				39459B5D1DD2504000D967A2 /* StatisticNumericPageViewController.swift */,
 				39459B5F1DD2508A00D967A2 /* NumericGraphViewController.swift */,
 				39459B611DD250A200D967A2 /* NumericStatsViewController.swift */,
-				39459B631DD2A39F00D967A2 /* StatisticNumericViewModel.swift */,
+				3980D2DF1DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift */,
 			);
 			name = Numeric;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				39459B521DD0DD9400D967A2 /* QuestionsViewModel.swift in Sources */,
 				39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */,
 				39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */,
+				3980D2E01DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift in Sources */,
 				39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */,
 				39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,

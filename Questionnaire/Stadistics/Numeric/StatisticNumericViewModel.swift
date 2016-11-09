@@ -14,21 +14,47 @@ class StatisticNumericViewModel: NSObject {
     private let source : AnswerRepo
     private let question : Question
     private let mDisposeBag = DisposeBag()
+    private var mAnswers : [Answer]?
     
     init(question: Question, source: AnswerRepo) {
         self.question = question
         self.source = source
     }
     
-    func getAnswersOnce(forQuestion question: Question) -> Observable<[Answer]>{
-        return source.getAnswers(forQuestion:question, sorted: false)
+    private func getAnswers() -> Observable<[Answer]> {
+        if mAnswers != nil {
+            // Inmediately return answers if we have already get them before
+            return Observable.just(mAnswers!)
+        }else{
+            // Get answers from repository
+            return source.getAnswers(forQuestion:question, sorted: false)
+        }
+        
     }
+    
+    func getAnswersRows() -> Observable<[DisplayableNumericAnswer]> {
+        return Observable.create { subscriber in
+            self.getAnswers().subscribe(onNext: { answers in
+                //Count ocurrences of each element
+                var counts:[Int:Int] = [:]
+                for answer in answers {
+                    counts[answer.value] = (counts[answer.value] ?? 0) + 1
+                }
+                //Return result as array
+                var result = [DisplayableNumericAnswer]()
+                for entry in counts {
+                    result.append(DisplayableNumericAnswer(value: entry.key, occurrences: entry.value))
+                }
+                subscriber.onNext(result)
+            }, onError: { error in subscriber.onError(error)})
+        }
+        
+    }
+    
     
     func getStatsOnce() -> Observable<DisplayableNumericsStats>{
         return Observable.create {  subscriber in
-            self.source.getAnswers(forQuestion: self.question, sorted: true)
-                .subscribe(onNext:{ answers in
-                    
+            self.getAnswers().subscribe(onNext:{ answers in
                     let length = answers.count
                     //Calculate average
                     let total = answers.map{ $0.value }.reduce(0, +)
@@ -61,12 +87,22 @@ class StatisticNumericViewModel: NSObject {
                         min: String(format: "%d", min),
                         max: String(format: "%d", max)))
 
-                })
+                }, onError: { error in subscriber.onError(error)})
 
         }
         
     }
     
+}
+
+struct DisplayableNumericAnswer{
+    let value : String
+    let occurrences : String
+    
+    init(value: Int, occurrences: Int) {
+        self.value = String(value)
+        self.occurrences = String(occurrences)
+    }
 }
 
 
