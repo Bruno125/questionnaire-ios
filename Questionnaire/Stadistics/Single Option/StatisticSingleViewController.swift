@@ -18,10 +18,12 @@ class StatisticSingleViewController: BaseStatisticViewController {
     
     private var mViewModel : StatisticSingleViewModel?
     private var mDisposeBag = DisposeBag()
+    private var mSorting = SingleAnswerSorting.value
     var mSingleAnswers = [DisplayableSingleAnswer]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSortingOptions()
         bind()
     }
     
@@ -35,7 +37,7 @@ class StatisticSingleViewController: BaseStatisticViewController {
         //Init viewModel
         mViewModel = StatisticSingleViewModel(question: question!, source: Injection.getAnswerRepo())
         
-        mViewModel?.getAnswersRows()
+        mViewModel?.getAnswersRows(sorting: mSorting)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { rows in
                 self.mSingleAnswers = rows
@@ -44,6 +46,34 @@ class StatisticSingleViewController: BaseStatisticViewController {
             }).addDisposableTo(mDisposeBag)
     }
     
+    func setupSortingOptions(){
+        mSorting = .value
+        //Create sort button
+        let sortButton = UIBarButtonItem(
+            image: UIImage(named: "icon_sort"),
+            style: .plain,
+            target: self,
+            action: #selector(showSortAlert))
+        //Attach to navigation bar
+        self.navigationItem.setRightBarButton(sortButton, animated: true)
+    }
+    
+    func showSortAlert(){
+        //Create alert
+        let alert = UIAlertController(title: "Sorting", message: "How should we sort the results?", preferredStyle: .alert)
+        //Add sorting options
+        alert.addAction(UIAlertAction(title: "By value", style: .default, handler: {action in self.sortBy(.value)}))
+        alert.addAction(UIAlertAction(title: "By occurrences", style: .default, handler: {action in self.sortBy(.occurrences)}))
+        alert.addAction(UIAlertAction(title: "By percentage", style: .default, handler: {action in self.sortBy(.percentage)}))
+        //Present alert
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func sortBy(_ sorting:SingleAnswerSorting){
+        mSorting = sorting
+        mSingleAnswers = mViewModel!.sort(mSingleAnswers, by: mSorting)
+        tableView.reloadData()
+    }
 
 }
 

@@ -18,10 +18,10 @@ class AnswerSimulatedRepo: AnswerRepo {
     }
     
     func getAnswers() -> Observable<[Answer]> {
-        return getAnswers(forQuestion: nil, sorted: true)
+        return getAnswers(forQuestion: nil)
     }
     
-    func getAnswers(forQuestion question: Question?, sorted: Bool?) -> Observable<[Answer]> {
+    func getAnswers(forQuestion question: Question?) -> Observable<[Answer]> {
         return Observable.create { subscriber in
             
             QuestionnaireRepository.sharedInstance.getQuestionnaire().subscribe(onNext: { questionnaire in

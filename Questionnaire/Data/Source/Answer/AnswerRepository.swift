@@ -24,8 +24,8 @@ class AnswerRepository: AnswerRepo {
         return coreDataSource.getAnswers()
     }
     
-    func getAnswers(forQuestion question:Question?, sorted : Bool? = false) -> Observable<[Answer]>{
-        return coreDataSource.getAnswers(forQuestion: question, sorted: sorted)
+    func getAnswers(forQuestion question:Question?) -> Observable<[Answer]>{
+        return coreDataSource.getAnswers(forQuestion: question)
     }
     
 }

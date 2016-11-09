@@ -45,10 +45,10 @@ class AnswerCoreData: AnswerRepo {
     }
     
     func getAnswers() -> Observable<[Answer]> {
-        return getAnswers(forQuestion: nil, sorted: true)
+        return getAnswers(forQuestion: nil)
     }
     
-    func getAnswers(forQuestion question:Question?, sorted : Bool? = false) -> Observable<[Answer]>{
+    func getAnswers(forQuestion question:Question?) -> Observable<[Answer]>{
         //Get managed context
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return Observable.just([])
@@ -56,9 +56,6 @@ class AnswerCoreData: AnswerRepo {
         let managedContext = appDelegate.persistentContainer.viewContext
         //Formulate request
         let fetchRequest = NSFetchRequest<ManagedAnswer>(entityName: self.ENTITY_NAME)
-        if question != nil {
-            fetchRequest.predicate = NSPredicate(format: "questionId == %@", question!.id)
-        }
         
         //Get ManagedAnswers from core data and convert them to Answers
         var result = [Answer]()

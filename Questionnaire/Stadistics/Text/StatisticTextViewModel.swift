@@ -27,7 +27,7 @@ class StatisticTextViewModel {
             return Observable.just(mAnswers!)
         }else{
             // Get answers from repository
-            return source.getAnswers(forQuestion:question, sorted: false)
+            return source.getAnswers(forQuestion:question)
         }
         
     }
