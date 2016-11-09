@@ -49,6 +49,7 @@
 		39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B611DD250A200D967A2 /* NumericStatsViewController.swift */; };
 		39459B641DD2A39F00D967A2 /* StatisticNumericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B631DD2A39F00D967A2 /* StatisticNumericViewModel.swift */; };
 		3980D2E01DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D2DF1DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift */; };
+		3980D2E21DD37C9100DC6F89 /* AnswerSimulatedRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D2E11DD37C9100DC6F89 /* AnswerSimulatedRepo.swift */; };
 		39EE5BA11DCE34B400A82D80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */; };
 		39EE5BA21DCE34B400A82D80 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */; };
 		39EE5BA31DCE34B400A82D80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */; };
@@ -125,6 +126,7 @@
 		39459B611DD250A200D967A2 /* NumericStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericStatsViewController.swift; path = Stadistics/Numeric/NumericStatsViewController.swift; sourceTree = "<group>"; };
 		39459B631DD2A39F00D967A2 /* StatisticNumericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticNumericViewModel.swift; path = Stadistics/Numeric/StatisticNumericViewModel.swift; sourceTree = "<group>"; };
 		3980D2DF1DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericAnswerTableViewCell.swift; path = Stadistics/Numeric/NumericAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		3980D2E11DD37C9100DC6F89 /* AnswerSimulatedRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerSimulatedRepo.swift; path = Data/Source/AnswerSimulatedRepo.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		39EE5B9D1DCE34B400A82D80 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				39459B491DD0C5E800D967A2 /* AnswerRepo.swift */,
 				39459B4B1DD0C64500D967A2 /* AnswerCoreData.swift */,
 				39459B4D1DD0CB9C00D967A2 /* AnswerRepository.swift */,
+				3980D2E11DD37C9100DC6F89 /* AnswerSimulatedRepo.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
 				39459B4E1DD0CB9C00D967A2 /* AnswerRepository.swift in Sources */,
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
+				3980D2E21DD37C9100DC6F89 /* AnswerSimulatedRepo.swift in Sources */,
 				39459B4A1DD0C5E800D967A2 /* AnswerRepo.swift in Sources */,
 				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
 				39459B5E1DD2504000D967A2 /* StatisticNumericPageViewController.swift in Sources */,
