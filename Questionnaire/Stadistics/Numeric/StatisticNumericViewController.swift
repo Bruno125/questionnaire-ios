@@ -16,7 +16,6 @@ class StatisticNumericViewController: BaseStatisticViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     }
     

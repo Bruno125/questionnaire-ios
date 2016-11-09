@@ -18,7 +18,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Statistics"
         bind()
     }
 

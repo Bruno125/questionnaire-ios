@@ -93,13 +93,15 @@ class QuestionnaireViewModel: NSObject {
         let isLast = mCurrentIndex + 1 >= mQuestionnaire!.questions.count
         if isLast {
             //Finish and save answers
-            let success = mAnswerSource.save(answers: mAnswers)
-            if success {
-                //Notify questionnaire completion
-            }else{
-                //Remove answers from previous question
-                mAnswers.removeLast(mAnswersTrace.removeLast())
-            }
+            
+            mAnswerSource.save(answers: mAnswers).subscribe(onNext: { sucess in
+                if sucess {
+                    //Notify questionnaire completion
+                }else{
+                    //Remove answers from previous question
+                    self.mAnswers.removeLast(self.mAnswersTrace.removeLast())
+                }
+            }).addDisposableTo(self.mDisposeBag)
         }else{
             //Procceed to next question
             mCurrentIndex += 1

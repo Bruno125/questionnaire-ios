@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AnswerRepository: AnswerRepo {
     
@@ -15,12 +16,16 @@ class AnswerRepository: AnswerRepo {
     
     let coreDataSource = AnswerCoreData.sharedInstance
     
-    func save(answers: [Answer]) -> Bool {
+    func save(answers: [Answer]) -> Observable<Bool> {
         return coreDataSource.save(answers: answers)
     }
     
-    func getAll() -> [Answer] {
-        return coreDataSource.getAll()
+    func getAnswers() -> Observable<[Answer]> {
+        return coreDataSource.getAnswers()
+    }
+    
+    func getAnswers(forQuestion question:Question?, sorted : Bool? = false) -> Observable<[Answer]>{
+        return coreDataSource.getAnswers(forQuestion: question, sorted: sorted)
     }
     
 }

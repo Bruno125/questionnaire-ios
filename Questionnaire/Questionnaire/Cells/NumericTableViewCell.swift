@@ -11,6 +11,9 @@ import UIKit
 class NumericTableViewCell: UITableViewCell, ChoiceCell {
 
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet var borderView: UIView!
+    @IBOutlet var minusButton: UIButton!
+    @IBOutlet var plusButton: UIButton!
     
     var mChoice : NumberChoice?
     var value = 0

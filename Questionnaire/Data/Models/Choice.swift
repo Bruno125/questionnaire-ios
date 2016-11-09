@@ -45,7 +45,7 @@ class TextChoice : Choice{
     
     func getAnswer() -> Answer? {
         if !value.isEmpty{
-            return Answer(questionId: questionId, choiceId: id, value: nil, label: value)
+            return Answer(questionId: questionId, choiceId: id, value: 0, label: value)
         }else{
             return nil
         }
@@ -69,7 +69,7 @@ class NumberChoice : Choice{
     }
     
     func getAnswer() -> Answer? {
-        return Answer(questionId: questionId, choiceId: id, value: 1, label: nil)
+        return Answer(questionId: questionId, choiceId: id, value: value, label: nil)
     }
 }
 

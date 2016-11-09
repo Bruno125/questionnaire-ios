@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RxSwift
 
 class AnswerCoreData: AnswerRepo {
     
@@ -16,42 +17,48 @@ class AnswerCoreData: AnswerRepo {
     
     private let ENTITY_NAME = "ManagedAnswer"
     
-    func save(answers: [Answer]) -> Bool {
-        
+    func save(answers: [Answer]) -> Observable<Bool> {
         //Get managed context
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return false
+            return Observable.just(false)
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         
         for answer in answers {
             //Create managed object
-            let managedAnswer = NSEntityDescription.insertNewObject(forEntityName: ENTITY_NAME, into: managedContext) as! ManagedAnswer
+            let managedAnswer = NSEntityDescription.insertNewObject(forEntityName: self.ENTITY_NAME, into: managedContext) as! ManagedAnswer
             //Assign values to managed object
             managedAnswer.questionId = answer.questionId
             managedAnswer.choiceId = answer.choiceId
             managedAnswer.label = answer.label
-            managedAnswer.value = answer.value == nil ? Int64(0) : Int64(answer.value!)
+            managedAnswer.value = Int64(answer.value)
         }
         
         //Save answers
         do {
             try managedContext.save()
-            return true
+            return Observable.just(true)
         } catch {
-            return false
+            return Observable.just(false)
         }
-        
+
     }
     
-    func getAll() -> [Answer] {
+    func getAnswers() -> Observable<[Answer]> {
+        return getAnswers(forQuestion: nil, sorted: true)
+    }
+    
+    func getAnswers(forQuestion question:Question?, sorted : Bool? = false) -> Observable<[Answer]>{
         //Get managed context
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return []
+            return Observable.just([])
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         //Formulate request
-        let fetchRequest = NSFetchRequest<ManagedAnswer>(entityName: ENTITY_NAME)
+        let fetchRequest = NSFetchRequest<ManagedAnswer>(entityName: self.ENTITY_NAME)
+        if question != nil {
+            fetchRequest.predicate = NSPredicate(format: "questionId == %@", question!.id)
+        }
         
         //Get ManagedAnswers from core data and convert them to Answers
         var result = [Answer]()
@@ -59,18 +66,17 @@ class AnswerCoreData: AnswerRepo {
             let managedAnswers = try managedContext.fetch(fetchRequest)
             for managedAnswer in managedAnswers {
                 result.append(Answer(questionId: managedAnswer.questionId!,
-                                             choiceId: managedAnswer.choiceId!,
-                                             value: managedAnswer.value,
-                                             label: managedAnswer.label))
+                                     choiceId: managedAnswer.choiceId!,
+                                     value: Int(managedAnswer.value),
+                                     label: managedAnswer.label))
             }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         
-        return result
-        
+        return Observable.just(result)
+
+
     }
-    
-    
     
 }

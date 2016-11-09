@@ -7,19 +7,41 @@
 //
 
 import UIKit
+import RxSwift
 
 class NumericStatsViewController: BaseStatisticViewController {
 
+    
+    @IBOutlet var averageLabel: UILabel!
+    @IBOutlet var minLabel: UILabel!
+    @IBOutlet var maxLabel: UILabel!
+    @IBOutlet var medianLabel: UILabel!
+    @IBOutlet var modeLabel: UILabel!
+    @IBOutlet var deviationLabel: UILabel!
+    
+    
+    var mViewModel : StatisticNumericViewModel?
+    var mDisposeBag = DisposeBag()
+    
     override func viewDidLoad() {
-        requiresQuestionOnLoad = false
         super.viewDidLoad()
-
+        mViewModel = StatisticNumericViewModel(question: question!, source: Injection.getAnswerRepo())
+        bind()
+    }
+    
+    func bind(){
+        mViewModel?.getStatsOnce().subscribe(onNext: { stats in
+            self.averageLabel.text = stats.average
+            self.medianLabel.text = stats.median
+            self.modeLabel.text = stats.mode
+            self.deviationLabel.text = stats.deviation
+            self.minLabel.text = stats.min
+            self.maxLabel.text = stats.max
+        }).addDisposableTo(mDisposeBag)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    
     
 
     /*

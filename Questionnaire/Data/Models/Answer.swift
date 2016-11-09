@@ -13,10 +13,10 @@ class Answer: NSObject {
     
     let questionId : String
     let choiceId: String
-    let value : Int64?
+    let value : Int
     let label : String?
     
-    init(questionId :String, choiceId :String, value :Int64?, label :String?) {
+    init(questionId :String, choiceId :String, value :Int, label :String?) {
         self.questionId = questionId
         self.choiceId = choiceId
         self.value = value
