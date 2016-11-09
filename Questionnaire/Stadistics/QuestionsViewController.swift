@@ -14,6 +14,7 @@ class QuestionsViewController: UIViewController {
     let mViewModel = QuestionsViewModel(source: Injection.getQuestionnaireRepo())
     private let mDisposeBag = DisposeBag()
     var mQuestions = [Question]()
+    var mSelectedQuestion : Question?
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
@@ -35,29 +36,27 @@ class QuestionsViewController: UIViewController {
     func showQuestionStatistics(question :Question){
         
         //Redirect to proper viewController depending on the question type
-        var vc : BaseStatisticViewController?
+        var segue : String?
         switch question.getType() {
         case .text:
-            vc = storyboard!.instantiateViewController(withIdentifier: "StatisticTextViewController") as! StatisticTextViewController
-            vc?.question = question
-            break
+            segue = "TextStatisticSegue"
         case .numeric:
-            vc = storyboard!.instantiateViewController(withIdentifier: "StatisticNumericViewController") as! StatisticNumericViewController
-            vc?.question = question
+            segue = "NumericStatisticSegue"
         case .singleOption:
-            break
+            segue = "SingleStatisticSegue"
         case .multipleOption:
-            break
+            segue = "MultipleStatisticSegue"
         default:
             return
         }
-        
-        //Present view controller if was successfully instantiated
-        if vc != nil {
-            navigationController?.pushViewController(vc!, animated: true)
+        mSelectedQuestion = question
+        performSegue(withIdentifier: segue!, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? BaseStatisticViewController{
+            vc.question = mSelectedQuestion
         }
-        
-        
     }
     
 }
