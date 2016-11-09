@@ -33,6 +33,10 @@ class StatisticTextViewModel {
     }
     
     func getAnswersRows() -> Observable<[DisplayableTextAnswer]> {
+        return getAnswersRows(sorting: .none)
+    }
+    
+    func getAnswersRows(sorting: TextAnswerSorting) -> Observable<[DisplayableTextAnswer]> {
         return Observable.create { subscriber in
             self.getAnswers().subscribe(onNext: { answers in
                 //Count ocurrences of each element
@@ -47,13 +51,34 @@ class StatisticTextViewModel {
                 for entry in counts {
                     result.append(DisplayableTextAnswer(value: entry.key, occurrences: entry.value))
                 }
+                //Apply sort
+                result = self.sort(result, by: sorting)
+                
                 subscriber.onNext(result)
             }, onError: { error in subscriber.onError(error)})
         }
         
     }
+    
+    
+    func sort(_ answers :[DisplayableTextAnswer], by sorting:TextAnswerSorting) -> [DisplayableTextAnswer]{
+        //Apply sort
+        switch sorting{
+        case .value:
+            return answers.sorted{ $0.value.localizedCaseInsensitiveCompare($1.value) == .orderedAscending}
+        case .occurrences:
+            return answers.sorted{ Int($0.occurrences)! > Int($1.occurrences)!}
+        default:
+            return answers
+        }
+    }
 }
 
+enum TextAnswerSorting{
+    case none
+    case value
+    case occurrences
+}
 
 struct DisplayableTextAnswer{
     let value : String

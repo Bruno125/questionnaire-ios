@@ -33,6 +33,10 @@ class StatisticNumericViewModel: NSObject {
     }
     
     func getAnswersRows() -> Observable<[DisplayableNumericAnswer]> {
+        return getAnswersRows(sorting: .none)
+    }
+    
+    func getAnswersRows(sorting : NumericAnswerSorting) -> Observable<[DisplayableNumericAnswer]> {
         return Observable.create { subscriber in
             self.getAnswers().subscribe(onNext: { answers in
                 //Count ocurrences of each element
@@ -45,12 +49,30 @@ class StatisticNumericViewModel: NSObject {
                 for entry in counts {
                     result.append(DisplayableNumericAnswer(value: entry.key, occurrences: entry.value))
                 }
+                //Apply sort
+                result = self.sort(result, by: sorting)
+                
                 subscriber.onNext(result)
             }, onError: { error in subscriber.onError(error)})
         }
         
     }
     
+    func sort(_ answers :[DisplayableNumericAnswer], by sorting:NumericAnswerSorting) -> [DisplayableNumericAnswer]{
+        //Apply sort
+        switch sorting{
+        case .valueAscending:
+            return answers.sorted{ Int($0.value)! < Int($1.value)!}
+        case .valueDescending:
+            return answers.sorted{ Int($0.value)! > Int($1.value)!}
+        case .occurrencesAscending:
+            return answers.sorted{ Int($0.occurrences)! < Int($1.occurrences)!}
+        case .occurrencesDescending:
+            return answers.sorted{ Int($0.occurrences)! > Int($1.occurrences)!}
+        default:
+            return answers
+        }
+    }
     
     func getStatsOnce() -> Observable<DisplayableNumericsStats>{
         return Observable.create {  subscriber in
@@ -94,6 +116,15 @@ class StatisticNumericViewModel: NSObject {
     }
     
 }
+
+enum NumericAnswerSorting{
+    case none
+    case valueAscending
+    case valueDescending
+    case occurrencesAscending
+    case occurrencesDescending
+}
+
 
 struct DisplayableNumericAnswer{
     let value : String

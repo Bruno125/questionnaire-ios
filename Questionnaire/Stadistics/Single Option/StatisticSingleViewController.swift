@@ -60,11 +60,12 @@ class StatisticSingleViewController: BaseStatisticViewController {
     
     func showSortAlert(){
         //Create alert
-        let alert = UIAlertController(title: "Sorting", message: "How should we sort the results?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "How should we sort the results?", message: "", preferredStyle: .alert)
         //Add sorting options
         alert.addAction(UIAlertAction(title: "By value", style: .default, handler: {action in self.sortBy(.value)}))
         alert.addAction(UIAlertAction(title: "By occurrences", style: .default, handler: {action in self.sortBy(.occurrences)}))
         alert.addAction(UIAlertAction(title: "By percentage", style: .default, handler: {action in self.sortBy(.percentage)}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         //Present alert
         present(alert, animated: true, completion: nil)
     }

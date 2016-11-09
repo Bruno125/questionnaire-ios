@@ -17,10 +17,12 @@ class StatisticTextViewController: BaseStatisticViewController {
     @IBOutlet var titleLabel: UILabel!
     private var mViewModel : StatisticTextViewModel?
     private var mDisposeBag = DisposeBag()
+    private var mSorting = TextAnswerSorting.value
     var mTextAnswers = [DisplayableTextAnswer]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSortingOptions()
         bind()
     }
     
@@ -34,7 +36,7 @@ class StatisticTextViewController: BaseStatisticViewController {
         //Init viewModel
         mViewModel = StatisticTextViewModel(question: question!, source: Injection.getAnswerRepo())
         
-        mViewModel?.getAnswersRows()
+        mViewModel?.getAnswersRows(sorting:mSorting)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { rows in
                 self.mTextAnswers = rows
@@ -43,6 +45,35 @@ class StatisticTextViewController: BaseStatisticViewController {
             }).addDisposableTo(mDisposeBag)
     }
     
+    
+    func setupSortingOptions(){
+        mSorting = .value
+        //Create sort button
+        let sortButton = UIBarButtonItem(
+            image: UIImage(named: "icon_sort"),
+            style: .plain,
+            target: self,
+            action: #selector(showSortAlert))
+        //Attach to navigation bar
+        self.navigationItem.setRightBarButton(sortButton, animated: true)
+    }
+    
+    func showSortAlert(){
+        //Create alert
+        let alert = UIAlertController(title: "How should we sort the results?", message: "", preferredStyle: .alert)
+        //Add sorting options
+        alert.addAction(UIAlertAction(title: "By value", style: .default, handler: {action in self.sortBy(.value)}))
+        alert.addAction(UIAlertAction(title: "By occurrences", style: .default, handler: {action in self.sortBy(.occurrences)}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        //Present alert
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func sortBy(_ sorting:TextAnswerSorting){
+        mSorting = sorting
+        mTextAnswers = mViewModel!.sort(mTextAnswers, by: mSorting)
+        tableView.reloadData()
+    }
 
 }
 

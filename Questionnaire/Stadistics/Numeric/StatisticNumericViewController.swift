@@ -19,10 +19,12 @@ class StatisticNumericViewController: BaseStatisticViewController {
     
     private var mViewModel : StatisticNumericViewModel?
     private var mDisposeBag = DisposeBag()
+    private var mSorting = NumericAnswerSorting.valueAscending
     var mNumericAnswers = [DisplayableNumericAnswer]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSortingOptions()
         bind()
     }
     
@@ -36,7 +38,7 @@ class StatisticNumericViewController: BaseStatisticViewController {
         //Init viewModel
         mViewModel = StatisticNumericViewModel(question: question!, source: Injection.getAnswerRepo())
         
-        mViewModel?.getAnswersRows()
+        mViewModel?.getAnswersRows(sorting: mSorting)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { rows in
                 self.mNumericAnswers = rows
@@ -58,6 +60,42 @@ class StatisticNumericViewController: BaseStatisticViewController {
             break
         }
     }
+    
+    func setupSortingOptions(){
+        mSorting = .valueAscending
+        //Create sort button
+        let sortButton = UIBarButtonItem(
+            image: UIImage(named: "icon_sort"),
+            style: .plain,
+            target: self,
+            action: #selector(showSortAlert))
+        //Attach to navigation bar
+        self.navigationItem.setRightBarButton(sortButton, animated: true)
+    }
+    
+    func showSortAlert(){
+        //Create alert
+        let alert = UIAlertController(title: "How should we sort the results?", message: "", preferredStyle: .alert)
+        //Add sorting options
+        alert.addAction(UIAlertAction(title: "By value ascending", style: .default,
+                                      handler: {action in self.sortBy(.valueAscending)}))
+        alert.addAction(UIAlertAction(title: "By value descending", style: .default,
+                                      handler: {action in self.sortBy(.valueDescending)}))
+        alert.addAction(UIAlertAction(title: "By occurrences ascending", style: .default,
+                                      handler: {action in self.sortBy(.occurrencesAscending)}))
+        alert.addAction(UIAlertAction(title: "By occurrences desscending", style: .default,
+                                      handler: {action in self.sortBy(.occurrencesDescending)}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        //Present alert
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func sortBy(_ sorting:NumericAnswerSorting){
+        mSorting = sorting
+        mNumericAnswers = mViewModel!.sort(mNumericAnswers, by: mSorting)
+        tableView.reloadData()
+    }
+
 }
 
 
