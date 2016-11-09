@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingIndicatorView.type = .ballTrianglePath
+        loadingIndicatorView.type = .ballSpinFadeLoader
         loadingIndicatorView.color = Utils.appColor()
         loadingIndicatorView.startAnimating()
         

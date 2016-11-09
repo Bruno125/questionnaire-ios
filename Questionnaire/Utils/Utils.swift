@@ -11,7 +11,7 @@ import UIKit
 class Utils: NSObject {
 
     static func appColor() -> UIColor{
-        return UIColor(netHex: 0x002f4d)
+        return UIColor(netHex: 0x008080)
     }
     
     

@@ -65,6 +65,9 @@
 		39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BC01DCE7C0700A82D80 /* Questionnaire.swift */; };
 		39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BC21DCE7ECF00A82D80 /* QuestionnaireRepo.swift */; };
 		39EE5BC51DCE7ECF00A82D80 /* QuestionnaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */; };
+		39F7F4A01DD3CC0600709D6C /* StatisticTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F49F1DD3CC0600709D6C /* StatisticTextViewController.swift */; };
+		39F7F4A21DD3CC2B00709D6C /* StatisticTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4A11DD3CC2B00709D6C /* StatisticTextViewModel.swift */; };
+		39F7F4A41DD3CDD200709D6C /* TextAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4A31DD3CDD200709D6C /* TextAnswerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +141,9 @@
 		39EE5BC01DCE7C0700A82D80 /* Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Questionnaire.swift; path = Data/Models/Questionnaire.swift; sourceTree = "<group>"; };
 		39EE5BC21DCE7ECF00A82D80 /* QuestionnaireRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireRepo.swift; path = Data/Source/QuestionnaireRepo.swift; sourceTree = "<group>"; };
 		39EE5BC31DCE7ECF00A82D80 /* QuestionnaireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireService.swift; path = Data/Source/QuestionnaireService.swift; sourceTree = "<group>"; };
+		39F7F49F1DD3CC0600709D6C /* StatisticTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticTextViewController.swift; path = Stadistics/Text/StatisticTextViewController.swift; sourceTree = "<group>"; };
+		39F7F4A11DD3CC2B00709D6C /* StatisticTextViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticTextViewModel.swift; path = Stadistics/Text/StatisticTextViewModel.swift; sourceTree = "<group>"; };
+		39F7F4A31DD3CDD200709D6C /* TextAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextAnswerTableViewCell.swift; path = Stadistics/Text/TextAnswerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 		392001081DC0F8C40083B942 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				39F7F49E1DD3CBDF00709D6C /* Text */,
 				39459B581DD24DD000D967A2 /* Numeric */,
 				39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */,
 				39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */,
@@ -322,6 +329,16 @@
 			name = Injection;
 			sourceTree = "<group>";
 		};
+		39F7F49E1DD3CBDF00709D6C /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				39F7F49F1DD3CC0600709D6C /* StatisticTextViewController.swift */,
+				39F7F4A11DD3CC2B00709D6C /* StatisticTextViewModel.swift */,
+				39F7F4A31DD3CDD200709D6C /* TextAnswerTableViewCell.swift */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,6 +445,7 @@
 				39405FFE1DCF54780049A96D /* SelectionTableViewCell.swift in Sources */,
 				39459B3D1DD09B0400D967A2 /* Answer.swift in Sources */,
 				392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */,
+				39F7F4A41DD3CDD200709D6C /* TextAnswerTableViewCell.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
 				39459B4E1DD0CB9C00D967A2 /* AnswerRepository.swift in Sources */,
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
@@ -446,12 +464,14 @@
 				3980D2E01DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift in Sources */,
 				39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */,
 				39405FEA1DCE81270049A96D /* QuestionnaireRepository.swift in Sources */,
+				39F7F4A01DD3CC0600709D6C /* StatisticTextViewController.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
 				39459B641DD2A39F00D967A2 /* StatisticNumericViewModel.swift in Sources */,
 				39405FFC1DCF36620049A96D /* DisplayableQuestionnaireState.swift in Sources */,
 				39EE5BC41DCE7ECF00A82D80 /* QuestionnaireRepo.swift in Sources */,
 				39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */,
 				39459B411DD0A7C800D967A2 /* ChoiceCell.swift in Sources */,
+				39F7F4A21DD3CC2B00709D6C /* StatisticTextViewModel.swift in Sources */,
 				39405FFA1DCF202B0049A96D /* QuestionnaireFileSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

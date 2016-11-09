@@ -1,8 +1,8 @@
 //
-//  StatisticNumericViewController.swift
+//  StatisticTextViewController.swift
 //  Questionnaire
 //
-//  Created by Bruno Aybar on 08/11/2016.
+//  Created by Bruno Aybar on 09/11/2016.
 //  Copyright © 2016 Bruno Aybar. All rights reserved.
 //
 
@@ -10,16 +10,14 @@ import UIKit
 import RxSwift
 import NVActivityIndicatorView
 
-class StatisticNumericViewController: BaseStatisticViewController {
+class StatisticTextViewController: BaseStatisticViewController {
     
-    @IBOutlet var statsContainerView: UIView!
-    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableLoaderIndicator: NVActivityIndicatorView!
-    
-    private var mViewModel : StatisticNumericViewModel?
+    @IBOutlet var titleLabel: UILabel!
+    private var mViewModel : StatisticTextViewModel?
     private var mDisposeBag = DisposeBag()
-    var mNumericAnswers = [DisplayableNumericAnswer]()
+    var mTextAnswers = [DisplayableTextAnswer]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,54 +32,53 @@ class StatisticNumericViewController: BaseStatisticViewController {
         tableLoaderIndicator.color = Utils.appColor()
         tableLoaderIndicator.startAnimating()
         //Init viewModel
-        mViewModel = StatisticNumericViewModel(question: question!, source: Injection.getAnswerRepo())
+        mViewModel = StatisticTextViewModel(question: question!, source: Injection.getAnswerRepo())
         
         mViewModel?.getAnswersRows()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { rows in
-                self.mNumericAnswers = rows
+                self.mTextAnswers = rows
                 self.tableView.reloadData()
                 self.tableLoaderIndicator.stopAnimating()
             }).addDisposableTo(mDisposeBag)
-        
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == nil {
-            return
-        }
-        
-        switch segue.identifier! {
-        case "StatsContainerSegue":
-            (segue.destination as? StatisticNumericPageViewController)?.question = question
-        default:
-            break
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
 
 
-extension StatisticNumericViewController : UITableViewDataSource{
 
+extension StatisticTextViewController : UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mNumericAnswers.count
+        return mTextAnswers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let answer = mNumericAnswers[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NumericAnswerTableViewCell", for: indexPath) as! NumericAnswerTableViewCell
+        let answer = mTextAnswers[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TextAnswerTableViewCell", for: indexPath) as! TextAnswerTableViewCell
         cell.valueLabel.text = answer.value
-        cell.ocurrencesLabel.text = answer.occurrences
+        cell.occurrencesLabel.text = answer.occurrences
         return cell
     }
     
 }
 
-extension StatisticNumericViewController : UITableViewDelegate{
+extension StatisticTextViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -92,7 +89,7 @@ extension StatisticNumericViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return tableView.dequeueReusableCell(withIdentifier: "NumericAnswerHeaderCell") as UIView?
+        return tableView.dequeueReusableCell(withIdentifier: "TextAnswerHeaderCell") as UIView?
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -100,4 +97,3 @@ extension StatisticNumericViewController : UITableViewDelegate{
     }
     
 }
-

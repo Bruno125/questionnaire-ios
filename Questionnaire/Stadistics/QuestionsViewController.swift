@@ -38,6 +38,8 @@ class QuestionsViewController: UIViewController {
         var vc : BaseStatisticViewController?
         switch question.getType() {
         case .text:
+            vc = storyboard!.instantiateViewController(withIdentifier: "StatisticTextViewController") as! StatisticTextViewController
+            vc?.question = question
             break
         case .numeric:
             vc = storyboard!.instantiateViewController(withIdentifier: "StatisticNumericViewController") as! StatisticNumericViewController
