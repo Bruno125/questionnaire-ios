@@ -159,7 +159,7 @@ extension StatisticSingleViewController : ChartViewDelegate{
         let dataSet = PieChartDataSet(values: entries, label: nil)
         dataSet.sliceSpace = 2.0
         //Set color palette
-        let colors = [ UIColor.white, UIColor.red, UIColor.blue, UIColor.brown, UIColor.green ]
+        let colors = ChartColorTemplates.liberty()
         dataSet.colors = colors
         //Create data
         let data = PieChartData(dataSet: dataSet)

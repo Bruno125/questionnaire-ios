@@ -1189,9 +1189,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="355" height="188"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-cn-Pau">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-cn-Pau">
                                 <rect key="frame" x="5" y="0.0" width="345" height="188"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElG-hr-Uiy">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="188"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-bv-XEL" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="10" y="5" width="325" height="178"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gJB-bv-XEL" firstAttribute="leading" secondItem="fe8-cn-Pau" secondAttribute="leading" constant="10" id="BqX-sF-7q3"/>
+                                    <constraint firstItem="gJB-bv-XEL" firstAttribute="top" secondItem="fe8-cn-Pau" secondAttribute="top" constant="5" id="Mj9-ai-743"/>
+                                    <constraint firstAttribute="trailing" secondItem="ElG-hr-Uiy" secondAttribute="trailing" id="RM1-oM-c0w"/>
+                                    <constraint firstAttribute="bottom" secondItem="ElG-hr-Uiy" secondAttribute="bottom" id="SKy-dA-DpB"/>
+                                    <constraint firstAttribute="bottom" secondItem="gJB-bv-XEL" secondAttribute="bottom" constant="5" id="Ujn-YX-TDb"/>
+                                    <constraint firstItem="ElG-hr-Uiy" firstAttribute="leading" secondItem="fe8-cn-Pau" secondAttribute="leading" id="fQ2-jK-gJ8"/>
+                                    <constraint firstItem="ElG-hr-Uiy" firstAttribute="top" secondItem="fe8-cn-Pau" secondAttribute="top" id="mJh-YZ-jdv"/>
+                                    <constraint firstAttribute="trailing" secondItem="gJB-bv-XEL" secondAttribute="trailing" constant="10" id="rWq-fm-QcS"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="4"/>
@@ -1220,6 +1240,10 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="355" height="188"/>
+                    <connections>
+                        <outlet property="chartView" destination="gJB-bv-XEL" id="cxq-ol-4jn"/>
+                        <outlet property="indicatorView" destination="eC0-uR-AJQ" id="grd-x1-ekW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nba-Ny-yyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
