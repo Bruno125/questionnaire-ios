@@ -35,6 +35,7 @@ class QuestionnaireViewModel: NSObject {
     private let questionsSubject = PublishSubject<Question>()
     private let questionnaireStateSubject = PublishSubject<DisplayableQuestionnaireState>()
     private let errorsSubject = PublishSubject<String>()
+    private let finishSubject = PublishSubject<Bool>()
     
     func getQuestionStream() -> Observable<Question> {
         return questionsSubject.asObservable()
@@ -47,6 +48,10 @@ class QuestionnaireViewModel: NSObject {
     
     func getErrorStream() -> Observable<String>{
         return errorsSubject.asObservable()
+    }
+    
+    func getFinishOnce() -> Observable<Bool>{
+        return finishSubject.asObservable()
     }
     
     func startQuestionnaire() -> Observable<Questionnaire>{
@@ -93,10 +98,10 @@ class QuestionnaireViewModel: NSObject {
         let isLast = mCurrentIndex + 1 >= mQuestionnaire!.questions.count
         if isLast {
             //Finish and save answers
-            
             mAnswerSource.save(answers: mAnswers).subscribe(onNext: { sucess in
                 if sucess {
                     //Notify questionnaire completion
+                    self.finishSubject.onNext(true)
                 }else{
                     //Remove answers from previous question
                     self.mAnswers.removeLast(self.mAnswersTrace.removeLast())

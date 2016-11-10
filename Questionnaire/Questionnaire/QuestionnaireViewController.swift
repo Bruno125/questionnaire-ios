@@ -19,6 +19,9 @@ class QuestionnaireViewController: UIViewController {
     @IBOutlet weak var previousButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
+    @IBOutlet var finishView: UIView!
+    @IBOutlet var headerToBottomConstraint: NSLayoutConstraint!
+    
     var mQuestionnaire : Questionnaire?
     var mViewModel : QuestionnaireViewModel?
     var mCurrentQuestion : Question?
@@ -70,6 +73,11 @@ class QuestionnaireViewController: UIViewController {
             .subscribe(onNext: { msg in self.view.makeToast(msg) })
             .addDisposableTo(mDisposeBag)
         
+        mViewModel?.getFinishOnce()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { r in self.finishAnimation() })
+            .addDisposableTo(mDisposeBag)
+        
     }
     
     func updateUI(state : DisplayableQuestionnaireState){
@@ -91,6 +99,29 @@ class QuestionnaireViewController: UIViewController {
         tableView.allowsMultipleSelection = state.questionType == .multipleOption
         
     }
+    
+    func finishAnimation(){
+        headerToBottomConstraint.priority = 900
+        //Expand header and hide other views
+        UIView.animate(withDuration: 0.5, animations: {
+            self.questionsPageControl.alpha = 0
+            self.titleLabel.alpha = 0
+            self.navigationBar.alpha = 0
+            self.view.layoutIfNeeded()
+        }, completion: { (value: Bool) in
+            //Show finish view
+            UIView.animate(withDuration: 0.3, animations: {
+                self.finishView.alpha = 1
+            }, completion: { (value:Bool) in
+                //Wait a few seconds and dismiss
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.dismiss(animated: true, completion: nil)
+                })
+            })
+        })
+        
+    }
+    
     
     func updateTableView(){
         
