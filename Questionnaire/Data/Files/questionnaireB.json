@@ -1,0 +1,98 @@
+{
+  "id": "2",
+  "title": "COMP327 Questionnaire",
+  "description": "This is a sample questionnaire",
+  "questions": [
+    {
+      "id" : "1",
+      "name": "question-1",
+      "type": "single-option",
+      "title": "Q 1",
+      "question": "How much have you enjoyed COMP327 practicals so far?",
+      "choices": [
+        {
+          "id" : "1",
+          "label": "not at all",
+          "value": 1
+        },
+        {
+          "id" : "2",
+          "label": "a little",
+          "value": 2
+        },
+        {
+          "id" : "3",
+          "label": "somewhat",
+          "value": 3
+        },
+        {
+          "id" : "4",
+          "label": "quite a lot",
+          "value": 4
+        },
+        {
+          "id" : "5",
+          "label": "Very much",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id" : "2",
+      "name": "question-2",
+      "type": "multi-option",
+      "title": "Q 2",
+      "question": "Which of these COMP327 lectures did you attend?",
+      "choices": [
+        {
+          "id" : "1",
+          "label": "Introduction to COMP327",
+          "value": 1
+        },
+        {
+          "id" : "2",
+          "label": "Introduction to Core Data",
+          "value": 2
+        },
+        {
+          "id" : "3",
+          "label": "Swift Intro",
+          "value": 3
+        },
+        {
+          "id" : "4",
+          "label": "The Internet of Things",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id" : "3",
+      "name": "question-3",
+      "type": "numeric",
+      "title": "Q 3",
+      "question": "How many mobile devices do you own?",
+      "choices": [
+        {
+          "id" : "1",
+          "label": "Quantity",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id" : "4",
+      "name": "question-4",
+      "type": "text",
+      "title": "Question 4",
+      "question": "Do you have any comments?",
+      "choices": [
+         {
+          "id" : "1",
+          "label": "comment",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

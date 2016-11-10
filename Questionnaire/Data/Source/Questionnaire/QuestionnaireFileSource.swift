@@ -18,7 +18,7 @@ class QuestionnaireFileSource: QuestionnaireRepo {
     func getQuestionnaire() -> Observable<Questionnaire> {
         return Observable<Questionnaire>.create { (observer) -> Disposable in
             do{
-                let json = try self.readJsonFile(file: "questionnaire")
+                let json = try self.readJsonFile(file: Injection.getQuestionnaireJsonName())
                 let questionnaire = Questionnaire.parse(json: json)
                 observer.onNext(questionnaire)
             }catch let error{
