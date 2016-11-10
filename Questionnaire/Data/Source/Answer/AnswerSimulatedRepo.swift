@@ -17,6 +17,10 @@ class AnswerSimulatedRepo: AnswerRepo {
         return AnswerCoreData.sharedInstance.save(answers: answers)
     }
     
+    func answersAvailable() -> Observable<Bool> {
+        return Observable.just(false)
+    }
+    
     func getAnswers() -> Observable<[Answer]> {
         return getAnswers(forQuestion: nil)
     }

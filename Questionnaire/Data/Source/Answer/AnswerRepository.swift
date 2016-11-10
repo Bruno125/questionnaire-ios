@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 
+//This class determines how the answers should be
+//accessed. In this case, it get it from core data source
 class AnswerRepository: AnswerRepo {
     
     //Singleton
@@ -18,6 +20,10 @@ class AnswerRepository: AnswerRepo {
     
     func save(answers: [Answer]) -> Observable<Bool> {
         return coreDataSource.save(answers: answers)
+    }
+    
+    func answersAvailable() -> Observable<Bool> {
+        return coreDataSource.answersAvailable()
     }
     
     func getAnswers() -> Observable<[Answer]> {

@@ -115,6 +115,7 @@ class QuestionnaireViewController: UIViewController {
             }, completion: { (value:Bool) in
                 //Wait a few seconds and dismiss
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.modalTransitionStyle = .crossDissolve
                     self.dismiss(animated: true, completion: nil)
                 })
             })

@@ -74,7 +74,6 @@ class StatisticTextViewController: BaseStatisticViewController {
         mTextAnswers = mViewModel!.sort(mTextAnswers, by: mSorting)
         tableView.reloadData()
     }
-
 }
 
 

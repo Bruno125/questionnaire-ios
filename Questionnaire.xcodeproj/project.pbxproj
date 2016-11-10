@@ -361,8 +361,8 @@
 		39F7F4AC1DD3DEB300709D6C /* Answer */ = {
 			isa = PBXGroup;
 			children = (
-				39F7F4B61DD3DED300709D6C /* AnswerCoreData.swift */,
 				39F7F4B71DD3DED300709D6C /* AnswerRepo.swift */,
+				39F7F4B61DD3DED300709D6C /* AnswerCoreData.swift */,
 				39F7F4B81DD3DED300709D6C /* AnswerRepository.swift */,
 				39F7F4B91DD3DED300709D6C /* AnswerSimulatedRepo.swift */,
 			);

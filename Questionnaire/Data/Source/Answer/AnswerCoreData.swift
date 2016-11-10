@@ -44,6 +44,10 @@ class AnswerCoreData: AnswerRepo {
 
     }
     
+    func answersAvailable() -> Observable<Bool> {
+        return getAnswers().map{ $0.count != 0}
+    }
+    
     func getAnswers() -> Observable<[Answer]> {
         return getAnswers(forQuestion: nil)
     }

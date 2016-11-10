@@ -8,27 +8,48 @@
 
 import UIKit
 import RxSwift
+import NVActivityIndicatorView
 
 class QuestionsViewController: UIViewController {
 
-    let mViewModel = QuestionsViewModel(source: Injection.getQuestionnaireRepo())
+    let mViewModel = QuestionsViewModel(source: Injection.getQuestionnaireRepo(),answerRepo: Injection.getAnswerRepo())
     private let mDisposeBag = DisposeBag()
     var mQuestions = [Question]()
     var mSelectedQuestion : Question?
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var noAnswersLabel: UILabel!
+    @IBOutlet var loaderIndicator: NVActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Statistics"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         bind()
     }
 
     func bind(){
+        //Setup loader
+        loaderIndicator.type = .ballPulseSync
+        loaderIndicator.startAnimating()
+        loaderIndicator.color = Utils.appColor()
+        
+        self.noAnswersLabel.isHidden = true
+        self.tableView.isHidden = true
+        
+        //Request question
         mViewModel.getQuestionsStream()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{ q in
                 self.mQuestions = q
+                self.loaderIndicator.stopAnimating()
+                self.tableView.isHidden = false
                 self.tableView.reloadData()
+            },onError: { error in
+                self.loaderIndicator.stopAnimating()
+                self.noAnswersLabel.isHidden = false
             })
             .addDisposableTo(mDisposeBag)
     }
@@ -58,7 +79,6 @@ class QuestionsViewController: UIViewController {
             vc.question = mSelectedQuestion
         }
     }
-    
 }
 
 extension QuestionsViewController : UITableViewDataSource{

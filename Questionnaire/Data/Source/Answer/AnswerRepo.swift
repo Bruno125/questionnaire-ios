@@ -11,6 +11,7 @@ import RxSwift
 
 protocol AnswerRepo {
     func save(answers:[Answer]) -> Observable<Bool>
+    func answersAvailable() -> Observable<Bool>
     func getAnswers() -> Observable<[Answer]>
     func getAnswers(forQuestion question:Question?) -> Observable<[Answer]>
 }
