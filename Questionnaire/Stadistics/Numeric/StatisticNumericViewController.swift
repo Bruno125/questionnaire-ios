@@ -17,6 +17,13 @@ class StatisticNumericViewController: BaseStatisticViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableLoaderIndicator: NVActivityIndicatorView!
     
+    
+    @IBOutlet var statsWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var statsToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var tableToTopConstraint: NSLayoutConstraint!
+    @IBOutlet var tableLeadingStatsConstraint: NSLayoutConstraint!
+    
+    
     private var mViewModel : StatisticNumericViewModel?
     private var mDisposeBag = DisposeBag()
     private var mSorting = NumericAnswerSorting.valueAscending
@@ -96,6 +103,18 @@ class StatisticNumericViewController: BaseStatisticViewController {
         tableView.reloadData()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateConstraints(isLandscape: UIDevice.current.orientation.isLandscape)
+    }
+    
+    func updateConstraints(isLandscape:Bool){
+        let priority = UILayoutPriority(isLandscape ? 900 : 100)
+        statsWidthConstraint.priority = priority
+        statsToBottomConstraint.priority = priority
+        tableToTopConstraint.priority = priority
+        tableLeadingStatsConstraint.priority = priority
+    }
+    
 }
 
 
