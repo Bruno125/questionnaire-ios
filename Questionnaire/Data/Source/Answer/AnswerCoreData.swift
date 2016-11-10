@@ -56,6 +56,10 @@ class AnswerCoreData: AnswerRepo {
         let managedContext = appDelegate.persistentContainer.viewContext
         //Formulate request
         let fetchRequest = NSFetchRequest<ManagedAnswer>(entityName: self.ENTITY_NAME)
+        if question != nil {
+            fetchRequest.predicate = NSPredicate(format: "questionId == %@", question!.id)
+        }
+        
         
         //Get ManagedAnswers from core data and convert them to Answers
         var result = [Answer]()

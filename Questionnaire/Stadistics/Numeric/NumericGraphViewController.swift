@@ -85,7 +85,7 @@ extension NumericGraphViewController : ChartViewDelegate{
         }
         
         let dataSet = BarChartDataSet(values: entries, label: nil)
-        dataSet.colors = ChartColorTemplates.material()
+        dataSet.colors = ChartColorTemplates.liberty()
         
         let data = BarChartData(dataSet: dataSet)
         data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10))
