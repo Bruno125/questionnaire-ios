@@ -19,6 +19,11 @@ class StatisticSingleViewController: BaseStatisticViewController {
     @IBOutlet var chartView: PieChartView!
     @IBOutlet var chartLoaderIndicator: NVActivityIndicatorView!
     
+    @IBOutlet var statsWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var statsToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var tableToTopConstraint: NSLayoutConstraint!
+    @IBOutlet var tableLeadingStatsConstraint: NSLayoutConstraint!
+    
     private var mViewModel : StatisticSingleViewModel?
     private var mDisposeBag = DisposeBag()
     private var mSorting = SingleAnswerSorting.value
@@ -95,6 +100,19 @@ class StatisticSingleViewController: BaseStatisticViewController {
         mSorting = sorting
         mSingleAnswers = mViewModel!.sort(mSingleAnswers, by: mSorting)
         tableView.reloadData()
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateConstraints(isLandscape: UIDevice.current.orientation.isLandscape)
+    }
+    
+    func updateConstraints(isLandscape:Bool){
+        let priority = UILayoutPriority(isLandscape ? 900 : 100)
+        statsWidthConstraint.priority = priority
+        statsToBottomConstraint.priority = priority
+        tableToTopConstraint.priority = priority
+        tableLeadingStatsConstraint.priority = priority
     }
 
 }
