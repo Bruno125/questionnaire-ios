@@ -752,10 +752,18 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDP-WR-B1w" customClass="PieChartView" customModule="Charts">
-                                                <rect key="frame" x="90.5" y="5" width="173" height="173"/>
+                                                <rect key="frame" x="91" y="5" width="173" height="173"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aDP-WR-B1w" secondAttribute="height" multiplier="1:1" id="ano-Rp-i5S"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXK-DJ-dn4" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                                <rect key="frame" x="167" y="81" width="20" height="20"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="2jn-2g-uAl"/>
+                                                    <constraint firstAttribute="height" constant="20" id="v8e-dr-66b"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -763,10 +771,12 @@
                                         <constraints>
                                             <constraint firstItem="aDP-WR-B1w" firstAttribute="centerX" secondItem="dq1-ki-MUx" secondAttribute="centerX" id="230-nP-Icm"/>
                                             <constraint firstAttribute="trailing" secondItem="tUQ-HB-7qo" secondAttribute="trailing" id="JIX-gv-chQ"/>
+                                            <constraint firstItem="kXK-DJ-dn4" firstAttribute="centerX" secondItem="aDP-WR-B1w" secondAttribute="centerX" id="N63-9k-P1q"/>
                                             <constraint firstItem="tUQ-HB-7qo" firstAttribute="top" secondItem="dq1-ki-MUx" secondAttribute="top" id="PIM-bn-7Ew"/>
                                             <constraint firstItem="tUQ-HB-7qo" firstAttribute="leading" secondItem="dq1-ki-MUx" secondAttribute="leading" id="Tlh-hP-emF"/>
                                             <constraint firstItem="aDP-WR-B1w" firstAttribute="top" secondItem="dq1-ki-MUx" secondAttribute="top" constant="5" id="aQL-SJ-X4b"/>
                                             <constraint firstAttribute="bottom" secondItem="aDP-WR-B1w" secondAttribute="bottom" constant="5" id="sQ5-tb-2oK"/>
+                                            <constraint firstItem="kXK-DJ-dn4" firstAttribute="centerY" secondItem="aDP-WR-B1w" secondAttribute="centerY" id="sgc-Ac-mal"/>
                                             <constraint firstAttribute="bottom" secondItem="tUQ-HB-7qo" secondAttribute="bottom" id="uCO-E7-V9K"/>
                                             <constraint firstAttribute="height" constant="183" id="v5R-Yt-w8I"/>
                                         </constraints>
@@ -924,6 +934,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chartLoaderIndicator" destination="kXK-DJ-dn4" id="hE9-Zl-FMZ"/>
                         <outlet property="chartView" destination="aDP-WR-B1w" id="JX3-Jr-9t2"/>
                         <outlet property="tableLoaderIndicator" destination="Eli-IF-QFf" id="6iI-i4-L5j"/>
                         <outlet property="tableView" destination="7gB-OI-ixB" id="eXg-ur-9hg"/>

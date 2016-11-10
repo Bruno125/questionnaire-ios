@@ -17,6 +17,7 @@ class StatisticSingleViewController: BaseStatisticViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableLoaderIndicator: NVActivityIndicatorView!
     @IBOutlet var chartView: PieChartView!
+    @IBOutlet var chartLoaderIndicator: NVActivityIndicatorView!
     
     private var mViewModel : StatisticSingleViewModel?
     private var mDisposeBag = DisposeBag()
@@ -37,6 +38,11 @@ class StatisticSingleViewController: BaseStatisticViewController {
         tableLoaderIndicator.type = .ballPulseSync
         tableLoaderIndicator.color = Utils.appColor()
         tableLoaderIndicator.startAnimating()
+        
+        chartLoaderIndicator.type = .lineScale
+        chartLoaderIndicator.color = UIColor.white
+        chartLoaderIndicator.startAnimating()
+        chartView.isHidden = true
         //Init viewModel
         mViewModel = StatisticSingleViewModel(question: question!, source: Injection.getAnswerRepo())
         
@@ -47,6 +53,7 @@ class StatisticSingleViewController: BaseStatisticViewController {
                 self.tableView.reloadData()
                 self.tableLoaderIndicator.stopAnimating()
                 self.updateChart()
+                self.chartLoaderIndicator.stopAnimating()
             }).addDisposableTo(mDisposeBag)
     }
     
@@ -158,7 +165,7 @@ extension StatisticSingleViewController : ChartViewDelegate{
         let data = PieChartData(dataSet: dataSet)
         data.setValueTextColor(UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0))
         chartView.data = data
-        
+        chartView.isHidden = false
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
