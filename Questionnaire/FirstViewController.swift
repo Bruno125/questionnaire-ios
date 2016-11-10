@@ -22,6 +22,9 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Questionnaire"
+        
         loadingIndicatorView.type = .ballSpinFadeLoader
         loadingIndicatorView.color = Utils.appColor()
         loadingIndicatorView.startAnimating()

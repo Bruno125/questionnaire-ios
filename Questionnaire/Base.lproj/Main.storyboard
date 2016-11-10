@@ -14,7 +14,7 @@
         <!--Questionnaire-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Questionnaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Questionnaire" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Questionnaire" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="ZEn-Xl-RXH" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eLq-QN-OEZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Questionnaire" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="edp-gm-tsa"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="A5M-7J-77L" id="tS3-9Q-chj"/>
                         <outlet property="infoView" destination="6GQ-Lv-hZo" id="5ob-RW-xZe"/>
@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-434"/>
+            <point key="canvasLocation" x="1688.8" y="-434.03298350824593"/>
         </scene>
         <!--Questionnaire View Controller-->
         <scene sceneID="uCl-zh-Wwo">
@@ -346,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzE-Vi-eWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="-434"/>
+            <point key="canvasLocation" x="2624.8000000000002" y="-434.03298350824593"/>
         </scene>
         <!--Questionnarie Statistics-->
         <scene sceneID="wg7-f3-ORb">
@@ -976,7 +976,7 @@
                         <color key="selectedImageTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="7tX-aB-My1" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="64r-De-nMr" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -1253,7 +1253,7 @@
         <scene sceneID="eol-Kx-8mf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="64r-De-nMr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stadistics" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Stadistics" image="icon_bar" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ppA-3i-iFM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1273,9 +1273,32 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="295.50224887556226"/>
         </scene>
+        <!--Questionnaire-->
+        <scene sceneID="wg1-2z-PXc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7tX-aB-My1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Questionnaire" image="icon_survey" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1NM-hr-B9B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="9IH-5m-LKe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZt-fk-Zse" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-434.03298350824593"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="icon_bar" width="22" height="22"/>
+        <image name="icon_survey" width="22" height="22"/>
     </resources>
 </document>
