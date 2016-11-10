@@ -71,6 +71,8 @@
 		39F7F4BB1DD3DED300709D6C /* AnswerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4B71DD3DED300709D6C /* AnswerRepo.swift */; };
 		39F7F4BC1DD3DED300709D6C /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4B81DD3DED300709D6C /* AnswerRepository.swift */; };
 		39F7F4BD1DD3DED300709D6C /* AnswerSimulatedRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4B91DD3DED300709D6C /* AnswerSimulatedRepo.swift */; };
+		39F7F4C11DD4E55E00709D6C /* StatisticsMultipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4C01DD4E55E00709D6C /* StatisticsMultipleViewController.swift */; };
+		39F7F4C31DD4E58000709D6C /* StatisticMultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4C21DD4E58000709D6C /* StatisticMultipleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -150,6 +152,8 @@
 		39F7F4B71DD3DED300709D6C /* AnswerRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerRepo.swift; path = Data/Source/Answer/AnswerRepo.swift; sourceTree = "<group>"; };
 		39F7F4B81DD3DED300709D6C /* AnswerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerRepository.swift; path = Data/Source/Answer/AnswerRepository.swift; sourceTree = "<group>"; };
 		39F7F4B91DD3DED300709D6C /* AnswerSimulatedRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerSimulatedRepo.swift; path = Data/Source/Answer/AnswerSimulatedRepo.swift; sourceTree = "<group>"; };
+		39F7F4C01DD4E55E00709D6C /* StatisticsMultipleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticsMultipleViewController.swift; path = "Stadistics/Multiple Option/StatisticsMultipleViewController.swift"; sourceTree = "<group>"; };
+		39F7F4C21DD4E58000709D6C /* StatisticMultipleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticMultipleViewModel.swift; path = "Stadistics/Multiple Option/StatisticMultipleViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,7 @@
 				39F7F49E1DD3CBDF00709D6C /* Text */,
 				39459B581DD24DD000D967A2 /* Numeric */,
 				39F7F4A51DD3D98200709D6C /* Single Option */,
+				39F7F4BF1DD4E52A00709D6C /* Multiple Option */,
 				39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */,
 				39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */,
 				39459B5B1DD24E7000D967A2 /* BaseStatisticViewController.swift */,
@@ -372,6 +377,15 @@
 			name = Questionnaire;
 			sourceTree = "<group>";
 		};
+		39F7F4BF1DD4E52A00709D6C /* Multiple Option */ = {
+			isa = PBXGroup;
+			children = (
+				39F7F4C01DD4E55E00709D6C /* StatisticsMultipleViewController.swift */,
+				39F7F4C21DD4E58000709D6C /* StatisticMultipleViewModel.swift */,
+			);
+			name = "Multiple Option";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,8 +497,10 @@
 				39F7F4B41DD3DEC700709D6C /* QuestionnaireRepository.swift in Sources */,
 				392000F31DC0F0880083B942 /* AppDelegate.swift in Sources */,
 				39EE5BB51DCE77E400A82D80 /* Question.swift in Sources */,
+				39F7F4C31DD4E58000709D6C /* StatisticMultipleViewModel.swift in Sources */,
 				39F7F4BD1DD3DED300709D6C /* AnswerSimulatedRepo.swift in Sources */,
 				39EE5BC11DCE7C0700A82D80 /* Questionnaire.swift in Sources */,
+				39F7F4C11DD4E55E00709D6C /* StatisticsMultipleViewController.swift in Sources */,
 				39459B5E1DD2504000D967A2 /* StatisticNumericPageViewController.swift in Sources */,
 				39F7F4AB1DD3DA9700709D6C /* SingleAnswerTableViewCell.swift in Sources */,
 				39F7F4B21DD3DEC700709D6C /* QuestionnaireFileSource.swift in Sources */,

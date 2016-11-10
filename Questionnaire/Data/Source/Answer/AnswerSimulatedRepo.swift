@@ -45,9 +45,23 @@ class AnswerSimulatedRepo: AnswerRepo {
                         case .numeric:
                             answers.append(Answer(questionId: id, choiceId: choice, value: random, label: nil))
                         case .singleOption:
-                            answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: "Answer \(random)"))
+                            answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: "Choice \(random)"))
                         case .multipleOption:
-                            break //TODO
+                            var aux = 0
+                            var atLeastOnce = false
+                            while aux < tempQuestion.choices.count {
+                                let selected = (arc4random_uniform(UInt32(10)) == 2)
+                                if selected {
+                                    let selectedChoice = tempQuestion.choices[aux]?.id
+                                    atLeastOnce = true
+                                    answers.append(Answer(questionId: id, choiceId: selectedChoice!, value: 1, label: "Choice \(aux)"))
+                                }
+                                aux += 1
+                            }
+                            if !atLeastOnce {
+                                answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: "Choice \(aux)"))
+                            }
+                            
                         default:
                             break
                         }

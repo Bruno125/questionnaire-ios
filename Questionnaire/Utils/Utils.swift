@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class Utils: NSObject {
 
@@ -32,5 +33,21 @@ extension Int {
                 f()
             }
         }
+    }
+}
+
+
+
+@objc(BarChartFormatter)
+public class BarChartFormatter: NSObject, IAxisValueFormatter{
+    
+    private var values = [String]()
+    
+    init(values: [String]) {
+        self.values = values
+    }
+    
+    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return values[Int(value)]
     }
 }
