@@ -69,8 +69,9 @@ extension QuestionsViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let question = mQuestions[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)) \(question.title)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell", for: indexPath) as! QuestionTableViewCell
+        cell.questionLabel.text = question.title
+        cell.typeLabel.text = "#\(question.type)"
         return cell
     }
 }
@@ -78,7 +79,11 @@ extension QuestionsViewController : UITableViewDataSource{
 extension QuestionsViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

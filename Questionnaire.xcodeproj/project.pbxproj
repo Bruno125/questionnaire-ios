@@ -73,6 +73,7 @@
 		39F7F4BD1DD3DED300709D6C /* AnswerSimulatedRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4B91DD3DED300709D6C /* AnswerSimulatedRepo.swift */; };
 		39F7F4C11DD4E55E00709D6C /* StatisticsMultipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4C01DD4E55E00709D6C /* StatisticsMultipleViewController.swift */; };
 		39F7F4C31DD4E58000709D6C /* StatisticMultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4C21DD4E58000709D6C /* StatisticMultipleViewModel.swift */; };
+		39F7F4C51DD4F45800709D6C /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7F4C41DD4F45800709D6C /* QuestionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,6 +155,7 @@
 		39F7F4B91DD3DED300709D6C /* AnswerSimulatedRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerSimulatedRepo.swift; path = Data/Source/Answer/AnswerSimulatedRepo.swift; sourceTree = "<group>"; };
 		39F7F4C01DD4E55E00709D6C /* StatisticsMultipleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticsMultipleViewController.swift; path = "Stadistics/Multiple Option/StatisticsMultipleViewController.swift"; sourceTree = "<group>"; };
 		39F7F4C21DD4E58000709D6C /* StatisticMultipleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticMultipleViewModel.swift; path = "Stadistics/Multiple Option/StatisticMultipleViewModel.swift"; sourceTree = "<group>"; };
+		39F7F4C41DD4F45800709D6C /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewCell.swift; path = Stadistics/QuestionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				39F7F4BF1DD4E52A00709D6C /* Multiple Option */,
 				39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */,
 				39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */,
+				39F7F4C41DD4F45800709D6C /* QuestionTableViewCell.swift */,
 				39459B5B1DD24E7000D967A2 /* BaseStatisticViewController.swift */,
 			);
 			name = Statistics;
@@ -515,6 +518,7 @@
 				39EE5BBF1DCE7B5900A82D80 /* Injection.swift in Sources */,
 				3980D2E01DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift in Sources */,
 				39459B621DD250A200D967A2 /* NumericStatsViewController.swift in Sources */,
+				39F7F4C51DD4F45800709D6C /* QuestionTableViewCell.swift in Sources */,
 				39F7F4A01DD3CC0600709D6C /* StatisticTextViewController.swift in Sources */,
 				39F7F4BB1DD3DED300709D6C /* AnswerRepo.swift in Sources */,
 				3920010C1DC101160083B942 /* QuestionnaireViewModel.swift in Sources */,
