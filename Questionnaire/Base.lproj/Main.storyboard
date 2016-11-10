@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -738,28 +739,48 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <containerView opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-Fv-cGN">
-                                        <rect key="frame" x="10" y="69" width="355" height="178"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-ki-MUx">
+                                        <rect key="frame" x="10" y="69" width="355" height="183"/>
+                                        <subviews>
+                                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUQ-HB-7qo">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="183"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDP-WR-B1w" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="90.5" y="5" width="173" height="173"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aDP-WR-B1w" secondAttribute="height" multiplier="1:1" id="ano-Rp-i5S"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="178" id="FdI-Dx-Kgd"/>
+                                            <constraint firstItem="aDP-WR-B1w" firstAttribute="centerX" secondItem="dq1-ki-MUx" secondAttribute="centerX" id="230-nP-Icm"/>
+                                            <constraint firstAttribute="trailing" secondItem="tUQ-HB-7qo" secondAttribute="trailing" id="JIX-gv-chQ"/>
+                                            <constraint firstItem="tUQ-HB-7qo" firstAttribute="top" secondItem="dq1-ki-MUx" secondAttribute="top" id="PIM-bn-7Ew"/>
+                                            <constraint firstItem="tUQ-HB-7qo" firstAttribute="leading" secondItem="dq1-ki-MUx" secondAttribute="leading" id="Tlh-hP-emF"/>
+                                            <constraint firstItem="aDP-WR-B1w" firstAttribute="top" secondItem="dq1-ki-MUx" secondAttribute="top" constant="5" id="aQL-SJ-X4b"/>
+                                            <constraint firstAttribute="bottom" secondItem="aDP-WR-B1w" secondAttribute="bottom" constant="5" id="sQ5-tb-2oK"/>
+                                            <constraint firstAttribute="bottom" secondItem="tUQ-HB-7qo" secondAttribute="bottom" id="uCO-E7-V9K"/>
+                                            <constraint firstAttribute="height" constant="183" id="v5R-Yt-w8I"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </containerView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="jMH-Fv-cGN" secondAttribute="trailing" constant="10" id="3jv-LF-7jp"/>
                                     <constraint firstItem="Gzx-9k-exN" firstAttribute="leading" secondItem="4R0-C3-pof" secondAttribute="leading" constant="10" id="5LC-IL-z0J"/>
-                                    <constraint firstItem="jMH-Fv-cGN" firstAttribute="leading" secondItem="4R0-C3-pof" secondAttribute="leading" constant="10" id="8xg-cw-JMe"/>
+                                    <constraint firstAttribute="trailing" secondItem="dq1-ki-MUx" secondAttribute="trailing" constant="10" id="CUo-Hs-K9B"/>
+                                    <constraint firstAttribute="bottom" secondItem="dq1-ki-MUx" secondAttribute="bottom" constant="8" id="P1B-aI-OtM"/>
                                     <constraint firstItem="Gzx-9k-exN" firstAttribute="top" secondItem="4R0-C3-pof" secondAttribute="top" constant="20" id="Pdl-he-9yR"/>
-                                    <constraint firstItem="jMH-Fv-cGN" firstAttribute="top" secondItem="Gzx-9k-exN" secondAttribute="bottom" constant="8" id="k8j-gw-sHX"/>
+                                    <constraint firstItem="dq1-ki-MUx" firstAttribute="top" secondItem="Gzx-9k-exN" secondAttribute="bottom" constant="8" id="fOp-Ei-5uW"/>
                                     <constraint firstAttribute="trailing" secondItem="Gzx-9k-exN" secondAttribute="trailing" constant="10" id="lvL-eZ-RdB"/>
-                                    <constraint firstAttribute="bottom" secondItem="jMH-Fv-cGN" secondAttribute="bottom" constant="13" id="rdf-PP-IA9"/>
+                                    <constraint firstItem="dq1-ki-MUx" firstAttribute="leading" secondItem="4R0-C3-pof" secondAttribute="leading" constant="10" id="siN-Yd-FL2"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-OI-ixB">
@@ -903,6 +924,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chartView" destination="aDP-WR-B1w" id="JX3-Jr-9t2"/>
                         <outlet property="tableLoaderIndicator" destination="Eli-IF-QFf" id="6iI-i4-L5j"/>
                         <outlet property="tableView" destination="7gB-OI-ixB" id="eXg-ur-9hg"/>
                         <outlet property="titleLabel" destination="Gzx-9k-exN" id="R2q-h4-YKN"/>

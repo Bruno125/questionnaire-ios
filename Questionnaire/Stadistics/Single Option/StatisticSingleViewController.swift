@@ -9,12 +9,14 @@
 import UIKit
 import RxSwift
 import NVActivityIndicatorView
+import Charts
 
 class StatisticSingleViewController: BaseStatisticViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableLoaderIndicator: NVActivityIndicatorView!
+    @IBOutlet var chartView: PieChartView!
     
     private var mViewModel : StatisticSingleViewModel?
     private var mDisposeBag = DisposeBag()
@@ -24,6 +26,7 @@ class StatisticSingleViewController: BaseStatisticViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSortingOptions()
+        setupChart()
         bind()
     }
     
@@ -43,6 +46,7 @@ class StatisticSingleViewController: BaseStatisticViewController {
                 self.mSingleAnswers = rows
                 self.tableView.reloadData()
                 self.tableLoaderIndicator.stopAnimating()
+                self.updateChart()
             }).addDisposableTo(mDisposeBag)
     }
     
@@ -56,6 +60,16 @@ class StatisticSingleViewController: BaseStatisticViewController {
             action: #selector(showSortAlert))
         //Attach to navigation bar
         self.navigationItem.setRightBarButton(sortButton, animated: true)
+    }
+    
+    func setupChart(){
+        chartView.delegate = self
+        chartView.entryLabelColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0)
+        chartView.legend.enabled = false
+        chartView.holeRadiusPercent = 0.2
+        chartView.transparentCircleRadiusPercent = 0.2
+        chartView.drawCenterTextEnabled = false
+        chartView.chartDescription?.enabled = false
     }
     
     func showSortAlert(){
@@ -118,4 +132,53 @@ extension StatisticSingleViewController : UITableViewDelegate{
         return 44
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chartView.highlightValue(x: Double(indexPath.row), dataSetIndex: 0, callDelegate: true)
+    }
+    
 }
+
+
+extension StatisticSingleViewController : ChartViewDelegate{
+    
+    func updateChart(){
+        
+        //Create entries
+        var entries = [PieChartDataEntry]()
+        for answer in mSingleAnswers{
+            entries.append(PieChartDataEntry(value: answer.percentageValue, label: answer.value, data: answer as AnyObject?))
+        }
+        //Create data set for chart
+        let dataSet = PieChartDataSet(values: entries, label: nil)
+        dataSet.sliceSpace = 2.0
+        //Set color palette
+        let colors = [ UIColor.white, UIColor.red, UIColor.blue, UIColor.brown, UIColor.green ]
+        dataSet.colors = colors
+        //Create data
+        let data = PieChartData(dataSet: dataSet)
+        data.setValueTextColor(UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0))
+        chartView.data = data
+        
+    }
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        var index = 0, aux = 0
+        for answer in mSingleAnswers{
+            if let selected = entry.data as? DisplayableSingleAnswer{
+                if answer.value == selected.value{
+                    index = aux
+                }
+            }
+            aux += 1
+        }
+        //Select table row
+        let indexPath = IndexPath(row: index, section: 0)
+        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
+    }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        tableView.reloadData()
+    }
+    
+}
+

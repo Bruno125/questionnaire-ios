@@ -37,7 +37,7 @@ class AnswerSimulatedRepo: AnswerRepo {
                         
                         let id = tempQuestion.id
                         let choice = String(arc4random_uniform(UInt32(tempQuestion.choices.count)))
-                        let random = Int(arc4random_uniform(100))
+                        let random = Int(arc4random_uniform(5))
                         
                         switch tempQuestion.getType() {
                         case .text:
