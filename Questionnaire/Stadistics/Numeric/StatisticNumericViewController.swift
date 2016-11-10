@@ -32,6 +32,7 @@ class StatisticNumericViewController: BaseStatisticViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSortingOptions()
+        updateConstraints()
         bind()
     }
     
@@ -104,10 +105,11 @@ class StatisticNumericViewController: BaseStatisticViewController {
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        updateConstraints(isLandscape: UIDevice.current.orientation.isLandscape)
+        updateConstraints()
     }
     
-    func updateConstraints(isLandscape:Bool){
+    func updateConstraints(){
+        let isLandscape = UIDevice.current.orientation.isLandscape
         let priority = UILayoutPriority(isLandscape ? 900 : 100)
         statsWidthConstraint.priority = priority
         statsToBottomConstraint.priority = priority
