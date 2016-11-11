@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextTableViewCell: UITableViewCell, ChoiceCell {
+class TextTableViewCell: UITableViewCell, ChoiceCell,UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     
@@ -28,6 +28,7 @@ class TextTableViewCell: UITableViewCell, ChoiceCell {
     func setData(choice: Choice){
         if let textChoice = choice as? TextChoice{
             self.mChoice = textChoice
+            self.textField.delegate = self
             self.textField.placeholder = textChoice.hint
             self.textField.addTarget(self, action: #selector(listenTextFieldChanges), for: UIControlEvents.editingChanged)
         }
@@ -35,6 +36,11 @@ class TextTableViewCell: UITableViewCell, ChoiceCell {
     
     func listenTextFieldChanges (textField : UITextField){
         self.mChoice?.value = textField.text!
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
