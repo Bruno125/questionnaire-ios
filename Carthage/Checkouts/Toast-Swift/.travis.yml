@@ -1,4 +1,0 @@
-language: objective-c
-osx_image: xcode8
-script:
- - xcodebuild -scheme Toast-Swift -sdk iphonesimulator10.0 build test
