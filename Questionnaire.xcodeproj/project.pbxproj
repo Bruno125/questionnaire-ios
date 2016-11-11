@@ -293,12 +293,10 @@
 		395AA4561DD53D5400631CF2 /* InjectionA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InjectionA.swift; path = Injection/InjectionA.swift; sourceTree = "<group>"; };
 		395AA4571DD53D5400631CF2 /* InjectionB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InjectionB.swift; path = Injection/InjectionB.swift; sourceTree = "<group>"; };
 		395AA4A71DD53D6400631CF2 /* Questionnaire B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Questionnaire B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		395AA4A81DD53D6400631CF2 /* Questionnaire copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Questionnaire copy-Info.plist"; path = "/Users/brunoaybar/Documents/University/Liverpool/Mobile Computing/Assignments/Questionnaire/Questionnaire copy-Info.plist"; sourceTree = "<absolute>"; };
 		395AA4AB1DD53DBF00631CF2 /* questionnaireA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questionnaireA.json; path = Data/Files/questionnaireA.json; sourceTree = "<group>"; };
 		395AA4AC1DD53DBF00631CF2 /* questionnaireB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questionnaireB.json; path = Data/Files/questionnaireB.json; sourceTree = "<group>"; };
 		395AA4B11DD53F5B00631CF2 /* InjectionC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InjectionC.swift; path = Injection/InjectionC.swift; sourceTree = "<group>"; };
 		395AA5001DD53F6400631CF2 /* Questionnaire C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Questionnaire C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		395AA5011DD53F6500631CF2 /* Questionnaire B copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Questionnaire B copy-Info.plist"; path = "/Users/brunoaybar/Documents/University/Liverpool/Mobile Computing/Assignments/Questionnaire/Questionnaire B copy-Info.plist"; sourceTree = "<absolute>"; };
 		3980D2DF1DD36C6000DC6F89 /* NumericAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericAnswerTableViewCell.swift; path = Stadistics/Numeric/NumericAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		39EE5B9B1DCE34B400A82D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39EE5B9C1DCE34B400A82D80 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -382,8 +380,6 @@
 				392000F11DC0F0880083B942 /* Questionnaire */,
 				392000F01DC0F0880083B942 /* Products */,
 				39EE5B9A1DCE34B200A82D80 /* Frameworks */,
-				395AA4A81DD53D6400631CF2 /* Questionnaire copy-Info.plist */,
-				395AA5011DD53F6500631CF2 /* Questionnaire B copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
