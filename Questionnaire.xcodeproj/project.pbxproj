@@ -17,7 +17,6 @@
 		392001121DC104F30083B942 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001101DC104F30083B942 /* TextTableViewCell.swift */; };
 		392001161DC105850083B942 /* NumericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392001141DC105850083B942 /* NumericTableViewCell.swift */; };
 		39405FEC1DCE8F020049A96D /* QuestionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FEB1DCE8F020049A96D /* QuestionTypes.swift */; };
-		39405FEE1DCEAB110049A96D /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; };
 		39405FEF1DCEAB1C0049A96D /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; };
 		39405FF01DCEAB1C0049A96D /* NVActivityIndicatorView.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39405FF31DCEAEA90049A96D /* HexaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39405FF21DCEAEA90049A96D /* HexaColor.swift */; };
@@ -27,13 +26,11 @@
 		39459B3D1DD09B0400D967A2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B3C1DD09B0400D967A2 /* Answer.swift */; };
 		39459B3F1DD09C5900D967A2 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B3E1DD09C5900D967A2 /* Choice.swift */; };
 		39459B411DD0A7C800D967A2 /* ChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B401DD0A7C800D967A2 /* ChoiceCell.swift */; };
-		39459B431DD0BD4000D967A2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		39459B441DD0BD6E00D967A2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		39459B451DD0BD6E00D967A2 /* ToastSwiftFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39459B481DD0C39000D967A2 /* Questionnaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39459B461DD0C39000D967A2 /* Questionnaire.xcdatamodeld */; };
 		39459B501DD0DD8000D967A2 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B4F1DD0DD8000D967A2 /* QuestionsViewController.swift */; };
 		39459B521DD0DD9400D967A2 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B511DD0DD9400D967A2 /* QuestionsViewModel.swift */; };
-		39459B551DD1347000D967A2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
 		39459B561DD1347500D967A2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
 		39459B571DD1347500D967A2 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39459B5A1DD24E1300D967A2 /* StatisticNumericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39459B591DD24E1300D967A2 /* StatisticNumericViewController.swift */; };
@@ -94,10 +91,7 @@
 		395AA48E1DD53D6400631CF2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		395AA48F1DD53D6400631CF2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */; };
 		395AA4901DD53D6400631CF2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */; };
-		395AA4911DD53D6400631CF2 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; };
-		395AA4921DD53D6400631CF2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		395AA4931DD53D6400631CF2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
-		395AA4941DD53D6400631CF2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
 		395AA4961DD53D6400631CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000FD1DC0F0880083B942 /* LaunchScreen.storyboard */; };
 		395AA4971DD53D6400631CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392000FB1DC0F0880083B942 /* Assets.xcassets */; };
 		395AA4981DD53D6400631CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000F81DC0F0880083B942 /* Main.storyboard */; };
@@ -163,10 +157,7 @@
 		395AA4E61DD53F6400631CF2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		395AA4E71DD53F6400631CF2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5B9E1DCE34B400A82D80 /* RxSwift.framework */; };
 		395AA4E81DD53F6400631CF2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39EE5BA01DCE34B400A82D80 /* SwiftyJSON.framework */; };
-		395AA4E91DD53F6400631CF2 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39405FED1DCEAB110049A96D /* NVActivityIndicatorView.framework */; };
-		395AA4EA1DD53F6400631CF2 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B421DD0BD4000D967A2 /* ToastSwiftFramework.framework */; };
 		395AA4EB1DD53F6400631CF2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
-		395AA4EC1DD53F6400631CF2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39459B541DD1347000D967A2 /* Charts.framework */; };
 		395AA4EE1DD53F6400631CF2 /* questionnaireB.json in Resources */ = {isa = PBXBuildFile; fileRef = 395AA4AC1DD53DBF00631CF2 /* questionnaireB.json */; };
 		395AA4EF1DD53F6400631CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392000FD1DC0F0880083B942 /* LaunchScreen.storyboard */; };
 		395AA4F01DD53F6400631CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392000FB1DC0F0880083B942 /* Assets.xcassets */; };
@@ -348,10 +339,7 @@
 				39459B441DD0BD6E00D967A2 /* ToastSwiftFramework.framework in Frameworks */,
 				39EE5BA41DCE34B400A82D80 /* RxSwift.framework in Frameworks */,
 				39EE5BA61DCE34B400A82D80 /* SwiftyJSON.framework in Frameworks */,
-				39405FEE1DCEAB110049A96D /* NVActivityIndicatorView.framework in Frameworks */,
-				39459B431DD0BD4000D967A2 /* ToastSwiftFramework.framework in Frameworks */,
 				39459B561DD1347500D967A2 /* Charts.framework in Frameworks */,
-				39459B551DD1347000D967A2 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,10 +354,7 @@
 				395AA48E1DD53D6400631CF2 /* ToastSwiftFramework.framework in Frameworks */,
 				395AA48F1DD53D6400631CF2 /* RxSwift.framework in Frameworks */,
 				395AA4901DD53D6400631CF2 /* SwiftyJSON.framework in Frameworks */,
-				395AA4911DD53D6400631CF2 /* NVActivityIndicatorView.framework in Frameworks */,
-				395AA4921DD53D6400631CF2 /* ToastSwiftFramework.framework in Frameworks */,
 				395AA4931DD53D6400631CF2 /* Charts.framework in Frameworks */,
-				395AA4941DD53D6400631CF2 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,10 +369,7 @@
 				395AA4E61DD53F6400631CF2 /* ToastSwiftFramework.framework in Frameworks */,
 				395AA4E71DD53F6400631CF2 /* RxSwift.framework in Frameworks */,
 				395AA4E81DD53F6400631CF2 /* SwiftyJSON.framework in Frameworks */,
-				395AA4E91DD53F6400631CF2 /* NVActivityIndicatorView.framework in Frameworks */,
-				395AA4EA1DD53F6400631CF2 /* ToastSwiftFramework.framework in Frameworks */,
 				395AA4EB1DD53F6400631CF2 /* Charts.framework in Frameworks */,
-				395AA4EC1DD53F6400631CF2 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +659,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Bruno Aybar";
 				TargetAttributes = {
 					392000EE1DC0F0880083B942 = {
@@ -996,6 +978,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1046,6 +1029,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
