@@ -17,8 +17,8 @@ class AnswerSimulatedRepo: AnswerRepo {
         return AnswerCoreData.sharedInstance.save(answers: answers)
     }
     
-    func answersAvailable() -> Observable<Bool> {
-        return Observable.just(false)
+    func answersAvailable(forQuestionnaire questionnaireId:String ) -> Observable<Bool> {
+        return Observable.just(true)
     }
     
     func getAnswers() -> Observable<[Answer]> {
@@ -39,17 +39,26 @@ class AnswerSimulatedRepo: AnswerRepo {
                             continue
                         }
                         
+                        let qId = tempQuestion.questionnaireId
                         let id = tempQuestion.id
                         let choice = String(arc4random_uniform(UInt32(tempQuestion.choices.count)))
                         let random = Int(arc4random_uniform(5))
                         
                         switch tempQuestion.getType() {
                         case .text:
-                            answers.append(Answer(questionId: id, choiceId: choice, value: 0, label: "Answer \(random)"))
+                            answers.append(Answer(questionnaireId: qId,
+                                                  questionId: id,
+                                                  choiceId: choice,
+                                                  value: 0,
+                                                  label: "Answer \(random)"))
                         case .numeric:
-                            answers.append(Answer(questionId: id, choiceId: choice, value: random, label: nil))
+                            answers.append(Answer(questionnaireId: qId,
+                                                  questionId: id,
+                                                  choiceId: choice,
+                                                  value: random,
+                                                  label: nil))
                         case .singleOption:
-                            answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: "Choice \(random)"))
+                            answers.append(Answer(questionnaireId: qId, questionId: id, choiceId: choice, value: 1, label: "Choice \(random)"))
                         case .multipleOption:
                             var aux = 0
                             var atLeastOnce = false
@@ -58,12 +67,20 @@ class AnswerSimulatedRepo: AnswerRepo {
                                 if selected {
                                     let selectedChoice = tempQuestion.choices[aux]?.id
                                     atLeastOnce = true
-                                    answers.append(Answer(questionId: id, choiceId: selectedChoice!, value: 1, label: "Choice \(aux)"))
+                                    answers.append(Answer(questionnaireId: qId,
+                                                          questionId: id,
+                                                          choiceId: selectedChoice!,
+                                                          value: 1,
+                                                          label: "Choice \(aux)"))
                                 }
                                 aux += 1
                             }
                             if !atLeastOnce {
-                                answers.append(Answer(questionId: id, choiceId: choice, value: 1, label: "Choice \(aux)"))
+                                answers.append(Answer(questionnaireId: qId,
+                                                      questionId: id,
+                                                      choiceId: choice,
+                                                      value: 1,
+                                                      label: "Choice \(aux)"))
                             }
                             
                         default:

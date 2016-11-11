@@ -4,9 +4,10 @@
         <attribute name="choiceId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="questionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionnaireId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ManagedAnswer" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="ManagedAnswer" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

@@ -34,7 +34,7 @@ class Questionnaire {
         let description = json["description"].stringValue
         
         let questions = json["questions"].arrayValue.map({
-            Question.parse(json: $0)
+            Question.parse(questionnaireId: id,json: $0)
         })
         
         return Questionnaire(id: id, title: title, description: description, questions: questions)

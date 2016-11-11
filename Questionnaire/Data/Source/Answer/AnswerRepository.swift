@@ -22,8 +22,8 @@ class AnswerRepository: AnswerRepo {
         return coreDataSource.save(answers: answers)
     }
     
-    func answersAvailable() -> Observable<Bool> {
-        return coreDataSource.answersAvailable()
+    func answersAvailable(forQuestionnaire questionnaireId: String) -> Observable<Bool> {
+        return coreDataSource.answersAvailable(forQuestionnaire: questionnaireId)
     }
     
     func getAnswers() -> Observable<[Answer]> {

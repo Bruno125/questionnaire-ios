@@ -22,16 +22,17 @@ class QuestionsViewModel {
     
     func getQuestionsStream() -> Observable<[Question]>{
         return Observable.create{ subscriber in
-            self.answerSource.answersAvailable().subscribe(onNext: { hasAnswers in
-                if !hasAnswers {
-                    subscriber.onError(QuestionsError.noAnswers)
-                }else{
-                    self.source.getQuestionnaire().map{ q in q.questions}.subscribe(
-                            onNext: { r in subscriber.onNext(r)},
-                            onError: { e in subscriber.onError(e)})
-                        .addDisposableTo(self.mDisposeBag)
-                }
-            })
+            //Get questionnaire
+            self.source.getQuestionnaire().subscribe( onNext: { q in
+                //Check if there are answers for this questionnaire
+                self.answerSource.answersAvailable(forQuestionnaire: q.id).subscribe(onNext: { hasAnswers in
+                    if hasAnswers { //We can display the questions
+                        subscriber.onNext(q.questions)
+                    }else{ //No answers for this questionnaire!
+                        subscriber.onError(QuestionsError.noAnswers)
+                    }
+                },onError: { e in subscriber.onError(e)}).addDisposableTo(self.mDisposeBag)
+            },onError: { e in subscriber.onError(e)})
         }
     }
     

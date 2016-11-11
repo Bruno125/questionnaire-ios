@@ -10,20 +10,21 @@ import UIKit
 import SwiftyJSON
 
 protocol Choice : Answerable{
+    var questionnaireId : String {get}
     var questionId : String {get}
     var id : String {get}
-    init(questionId :String, json :JSON)
+    init(questionnaireId: String, questionId :String, json :JSON)
 }
 
 class ChoiceHelper{
-    static func parse(questionId :String, type : QuestionTypes, json : JSON) -> Choice?{
+    static func parse(questionnaireId: String, questionId :String, type : QuestionTypes, json : JSON) -> Choice?{
         switch type {
         case .text:
-            return TextChoice(questionId: questionId, json: json)
+            return TextChoice(questionnaireId: questionnaireId, questionId: questionId, json: json)
         case .numeric:
-            return NumberChoice(questionId: questionId, json: json)
+            return NumberChoice(questionnaireId: questionnaireId, questionId: questionId, json: json)
         case .singleOption, .multipleOption:
-            return SelectionChoice(questionId: questionId, json: json)
+            return SelectionChoice(questionnaireId: questionnaireId, questionId: questionId, json: json)
         default:
             return nil
         }
@@ -33,10 +34,12 @@ class ChoiceHelper{
 class TextChoice : Choice{
     let id: String
     let questionId: String
+    let questionnaireId: String
     let hint : String
     var value : String
     
-    required init(questionId :String, json : JSON) {
+    required init(questionnaireId: String, questionId :String, json : JSON) {
+        self.questionnaireId = questionnaireId
         self.questionId = questionId
         self.id = json["id"].stringValue
         self.hint = json["hint"].stringValue
@@ -45,7 +48,7 @@ class TextChoice : Choice{
     
     func getAnswer() -> Answer? {
         if !value.isEmpty{
-            return Answer(questionId: questionId, choiceId: id, value: 0, label: value)
+            return Answer(questionnaireId: questionnaireId, questionId: questionId, choiceId: id, value: 0, label: value)
         }else{
             return nil
         }
@@ -56,11 +59,13 @@ class TextChoice : Choice{
 class NumberChoice : Choice{
     let id: String
     let questionId: String
+    let questionnaireId: String
     let min : Int
     let max : Int
     var value : Int
     
-    required init(questionId :String, json :JSON) {
+    required init(questionnaireId: String, questionId :String, json :JSON) {
+        self.questionnaireId = questionnaireId
         self.questionId = questionId
         self.id = json["id"].stringValue
         self.min = json["min"].intValue
@@ -69,17 +74,19 @@ class NumberChoice : Choice{
     }
     
     func getAnswer() -> Answer? {
-        return Answer(questionId: questionId, choiceId: id, value: value, label: nil)
+        return Answer(questionnaireId: questionnaireId, questionId: questionId, choiceId: id, value: value, label: nil)
     }
 }
 
 class SelectionChoice : Choice{
     let id: String
     let questionId: String
+    let questionnaireId: String
     let label : String
     var value : Bool
     
-    required init(questionId :String, json : JSON) {
+    required init(questionnaireId: String, questionId :String, json : JSON) {
+        self.questionnaireId = questionnaireId
         self.questionId = questionId
         self.id = json["id"].stringValue
         self.label = json["label"].stringValue
@@ -88,7 +95,7 @@ class SelectionChoice : Choice{
     
     func getAnswer() -> Answer? {
         if value{
-            return Answer(questionId: questionId, choiceId: id, value: 1, label: label)
+            return Answer(questionnaireId: questionnaireId, questionId: questionId, choiceId: id, value: 1, label: label)
         }else{
             return nil
         }

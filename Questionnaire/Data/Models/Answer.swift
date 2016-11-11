@@ -11,12 +11,14 @@ import CoreData
 
 class Answer: NSObject {
     
+    let questionnaireId : String
     let questionId : String
     let choiceId: String
     let value : Int
     let label : String?
     
-    init(questionId :String, choiceId :String, value :Int, label :String?) {
+    init(questionnaireId :String, questionId :String, choiceId :String, value :Int, label :String?) {
+        self.questionnaireId = questionnaireId
         self.questionId = questionId
         self.choiceId = choiceId
         self.value = value
