@@ -17,6 +17,10 @@ When downloading the project, please run
 
 to generate the proper build versions for your local configuration
 
+## Rx + MVVM
+
+This project uses the Model-View-ViewModel pattern, in combination with RxSwift. Basically, the view model will emmit streams of data for which the view will subscribe (using Rx observables) to update its UI. For further info about this, you can check [here](http://reactivex.io/), [here](https://realm.io/news/altconf-scott-gardner-reactive-programming-with-rxswift/) and [here](https://upday.github.io/blog/model-view-viewmodel/)
+
 ## Data
 
 This are the models used to represent the data in the app. Every model has a unique ID
@@ -35,7 +39,7 @@ This are the models used to represent the data in the app. Every model has a uni
 
 ## Data Source
 
-The data can be access by three different ways:
+The data can be access by four different ways:
 
 - __Web service__: That will return a json file with the questionnaire information. To see the json structure used in this app, you can [check the URL that the app consumes](https://private-9d5799-questionnaireapp.apiary-mock.com/questionnaire). This is managed in the [`QuestionnaireService`](Questionnaire/Data/Source/Questionnaire/QuestionnaireService.swift)
 - __JSON file__: there are a couple of .json files inside the projects that contain a json with the same structure as the one used in the web service. This is managed in the [`QuestionnaireFileSource`](Questionnaire/Data/Source/Questionnaire/QuestionnaireFileSource.swift)
