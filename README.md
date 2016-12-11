@@ -4,6 +4,8 @@ iOS application developed as my first assignment for COMP327 - Mobile Computing 
 
 It's my first attempt to develop an iOS app using the MVVM pattern + RxSwift
 
+UPDATE: I got full marks for this project 😉!
+
 ## Setup
 
 To run this project, you will need:
